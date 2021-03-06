@@ -3,7 +3,7 @@ import i18next from '../../i18n/i18next'
 import SectionHeader from '../../shared/SectionHeader'
 import MediaCard from '../../shared/MediaCard'
 import avatar from '../Introduction/img/avatar.png'
-import { Grid, Paper } from '@material-ui/core'
+import { Grid } from '@material-ui/core'
 
 export default function ExperiencePanel() {
     return (

@@ -52,11 +52,11 @@ export default function MediaCard({ imageSrc, title, details, url, start, end })
           {getTimespanText()}
         </CardContent>
       </CardActionArea>
-      <CardActions>
+      {/* <CardActions>
         <Button size="small" color="primary" onClick={openUrl}>
           {i18next.t('common.learnMore')}
         </Button>
-      </CardActions>
+      </CardActions> */}
     </Card>
   )
 }
