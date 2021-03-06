@@ -1,10 +1,37 @@
-import SectionHeader from '../../shared/SectionHeader'
+import React from 'react'
 import i18next from '../../i18n/i18next'
+import SectionHeader from '../../shared/SectionHeader'
+import MediaCard from '../../shared/MediaCard'
+import avatar from '../Introduction/img/avatar.png'
 
 export default function ExperiencePanel() {
     return (
         <div>
-            <SectionHeader>{i18next.t('experience.header')}</SectionHeader>
+          <SectionHeader>{i18next.t('experience.header')}</SectionHeader>
+          <MediaCard
+            imageSrc={avatar}
+            title={i18next.t('experience.paycom.name')}
+            details={i18next.t('experience.paycom.position')}
+            url={'https://www.paycom.com/'}
+            start={'May 2019'}
+            end={'present'}
+          />
+          <MediaCard
+            imageSrc={avatar}
+            title={i18next.t('experience.ou.name')}
+            details={i18next.t('experience.ou.position')}
+            url={'https://www.ou.edu/'}
+            start={'October 2015'}
+            end={'May 2019'}
+          />
+          <MediaCard
+            imageSrc={avatar}
+            title={i18next.t('experience.scmla.name')}
+            details={i18next.t('experience.scmla.position')}
+            url={'https://www.southcentralmla.org/'}
+            start={'2016'}
+            end={'2018'}
+          />
         </div>
-    )
+      );
 }

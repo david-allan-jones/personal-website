@@ -1,10 +1,12 @@
 import LinkAvatar from './LinkAvatar'
 import GitHubLogo from './img/github.png'
 import LinkedInLogo from './img/linkedin.png'
+import SectionHeader from '../../shared/SectionHeader'
 
 export default function LinksPanel() {
     return (
         <div>
+            <SectionHeader>Links</SectionHeader>
             <LinkAvatar
                 src={GitHubLogo}
                 alt='GitHub'

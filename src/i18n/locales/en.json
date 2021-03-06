@@ -5,7 +5,19 @@
         "aboutMe": "aboutMe"
     },
     "experience": {
-        "header": "Experience"
+        "header": "Experience",
+        "paycom": {
+            "name": "Paycom",
+            "position": "Software Developer"
+        },
+        "ou": {
+            "name": "The University of Oklahoma",
+            "position": "Web Developer"
+        },
+        "scmla": {
+            "name": "South Central Modern Language Association",
+            "position": "Android Developer"
+        }
     },
     "education": {
         "header": "Education",
