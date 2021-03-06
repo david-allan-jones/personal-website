@@ -1,7 +1,9 @@
+import i18n from '../../i18n/i18next'
+
 export default function Introduction() {
     return (
         <div>
-            <h5>Introduction</h5>
+            <h1>{i18n.t('introduction.greeting')}</h1>
         </div>
     )
 }
