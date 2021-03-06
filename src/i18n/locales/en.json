@@ -1,5 +1,19 @@
 {
     "introduction": {
-        "greeting": "Hello!"
+        "greeting": "Hello!",
+        "name": "David Jones",
+        "aboutMe": "aboutMe"
+    },
+    "experience": {
+        "header": "Experience"
+    },
+    "education": {
+        "header": "Education",
+        "ou": "The University of Oklahoma",
+        "uec": "The University of Electro-Communications",
+        "tcc": "Tulsa Communinity College"
+    },
+    "links": {
+        "header": "Links"
     }
 }
