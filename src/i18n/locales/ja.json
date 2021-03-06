@@ -1,6 +1,36 @@
 {
+    "common": {
+        "learnMore": "詳細"
+    },
+    "darkmode": {
+        "label": "夜間モード"
+    },
     "introduction": {
         "greeting": "ようこそ！",
         "name": "ジョーンズデイビッド"
+    },
+    "experience": {
+        "header": "職歴",
+        "paycom": {
+            "name": "Paycom",
+            "position": "ソフトウェア開発者"
+        },
+        "ou": {
+            "name": "オクラホマ大学",
+            "position": "ウェブ開発者"
+        },
+        "scmla": {
+            "name": "South Central Modern Language Association",
+            "position": "Androidデベロッパー"
+        }
+    },
+    "education": {
+        "header": "学歴",
+        "ou": "オクラホマ大学",
+        "uec": "電気通信大学",
+        "tcc": "タルサ・コミュニティー・カレッジ"
+    },
+    "links": {
+        "header": "リンク"
     }
 }

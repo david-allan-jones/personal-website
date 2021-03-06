@@ -1,8 +1,10 @@
 {
+    "darkmode": {
+        "label": "Dark Mode"
+    },
     "introduction": {
         "greeting": "Hello!",
-        "name": "David Jones",
-        "aboutMe": "aboutMe"
+        "name": "David Jones"
     },
     "experience": {
         "header": "Experience",

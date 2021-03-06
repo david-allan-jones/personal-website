@@ -1,4 +1,3 @@
-import LandingCarousel from './sections/LandingCarousel/LandingCarousel'
 import Introduction from './sections/Introduction/Introduction'
 import ExperiencePanel from './sections/ExperiencePanel/ExperiencePanel'
 import EducationPanel from './sections/EducationPanel/EducationPanel'

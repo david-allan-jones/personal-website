@@ -7,6 +7,7 @@ import CardContent from '@material-ui/core/CardContent'
 import CardMedia from '@material-ui/core/CardMedia'
 import Button from '@material-ui/core/Button'
 import Typography from '@material-ui/core/Typography'
+import i18next from '../i18n/i18next'
 
 const useStyles = makeStyles({
   root: {
@@ -35,7 +36,7 @@ export default function MediaCard({ imageSrc, title, details, url, start, end })
 
   return (
     <Card className={classes.root}>
-      <CardActionArea>
+      <CardActionArea onClick={openUrl}>
         <CardMedia
           className={classes.media}
           image={imageSrc}
@@ -53,7 +54,7 @@ export default function MediaCard({ imageSrc, title, details, url, start, end })
       </CardActionArea>
       <CardActions>
         <Button size="small" color="primary" onClick={openUrl}>
-          Learn More
+          {i18next.t('common.learnMore')}
         </Button>
       </CardActions>
     </Card>

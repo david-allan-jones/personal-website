@@ -10,6 +10,7 @@ import { useState } from 'react'
 
 const useStyles = makeStyles((theme) => ({
     carousel_container: {
+        height: "1000px"
     }
 }))
 
