@@ -6,7 +6,7 @@ import React from 'react'
 
 const useStyles = makeStyles((theme) => ({
     avatar: {
-        backgroundColor: 'green',
+        backgroundColor: '#3f51b5',
         width: theme.spacing(20),
         height: theme.spacing(20),
     }
