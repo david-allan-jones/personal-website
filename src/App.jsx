@@ -63,7 +63,6 @@ function App() {
   function getDarkModeSwitch() {
     return <Switch
       checked={darkModeEnabled}
-      size='large'
       onChange={() => setDarkModeEnabled(!darkModeEnabled)}
     />
   }
@@ -84,8 +83,14 @@ function App() {
                     label={i18next.t('darkmode.label')}
                 />
             </FormGroup>
-            <IconButton edge="start" className={classes.menuButton} color="inherit" aria-label="menu">
-              <MenuIcon onClick={toggleDrawer} />
+            <IconButton 
+              edge="start"
+              className={classes.menuButton}
+              color="inherit"
+              aria-label="menu"
+              onClick={toggleDrawer}
+            >
+              <MenuIcon  />
             </IconButton>
           </Toolbar>
         </AppBar>
