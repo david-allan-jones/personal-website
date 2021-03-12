@@ -24,14 +24,21 @@ function SectionWrapper({ children, anchor }) {
   </div>
 }
 
+const storageKey = 'darkModeEnabled'
+
 function App() {
-  const [darkModeEnabled, setDarkModeEnabled] = useState(false)
+  const [darkModeEnabled, setDarkModeEnabled] = useState(JSON.parse(localStorage.getItem(storageKey)) || false)
   const [drawerOpen, setDrawerOpen] = useState(false)
+
+  console.log(darkModeEnabled)
 
   function getDarkModeSwitch() {
     return <Switch
       checked={darkModeEnabled}
-      onChange={() => setDarkModeEnabled(!darkModeEnabled)}
+      onChange={() => {
+        setDarkModeEnabled(!darkModeEnabled)
+        localStorage.setItem(storageKey, !darkModeEnabled)
+      }}
     />
   }
 
