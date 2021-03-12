@@ -2,17 +2,19 @@ import React from 'react'
 import i18next from '../../i18n/i18next'
 import SectionHeader from '../../shared/SectionHeader'
 import MediaCard from '../../shared/MediaCard'
-import avatar from '../Introduction/img/avatar.png'
+import ouLibarry from '../ExperiencePanel/img/ou-library.jpg'
+import uecKoudou from './img/uec-koudou.jpg'
+import tulsaSkyline from './img/tulsa-skyline.jpg'
 import { Grid } from '@material-ui/core'
 
 export default function SimpleAccordion() {
   return (
     <div>
       <SectionHeader>{i18next.t('education.header')}</SectionHeader>
-      <Grid container spacing={10}>
+      <Grid container alignItems="center" spacing={10}>
         <Grid item xs={12} sm={4}>
           <MediaCard
-            imageSrc={avatar}
+            imageSrc={ouLibarry}
             title={i18next.t('education.ou')}
             url={'https://www.ou.edu/'}
             start={'2015'}
@@ -21,7 +23,7 @@ export default function SimpleAccordion() {
         </Grid>
         <Grid item xs={12} sm={4}>
           <MediaCard
-            imageSrc={avatar}
+            imageSrc={uecKoudou}
             title={i18next.t('education.uec')}
             url={'https://www.uec.ac.jp/eng/'}
             start={'2016'}
@@ -30,7 +32,7 @@ export default function SimpleAccordion() {
         </Grid>
         <Grid item xs={12} sm={4}>
           <MediaCard
-            imageSrc={avatar}
+            imageSrc={tulsaSkyline}
             title={i18next.t('education.tcc')}
             url={'https://www.tulsacc.edu/'}
             start={'2013'}

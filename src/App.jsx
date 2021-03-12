@@ -1,6 +1,7 @@
 import Introduction from './sections/Introduction/Introduction'
 import ExperiencePanel from './sections/ExperiencePanel/ExperiencePanel'
 import EducationPanel from './sections/EducationPanel/EducationPanel'
+import ProjectsPanel from './sections/ProjectsPanel/ProjectsPanel'
 import LinksPanel from './sections/LinksPanel/LinksPanel'
 import { createMuiTheme } from '@material-ui/core/styles'
 import { useState } from 'react'
@@ -45,18 +46,18 @@ function App() {
         <AppBar>
           <Toolbar>
             <FormGroup>
-                <FormControlLabel
-                    control={getDarkModeSwitch()}
-                    label={i18next.t('darkmode.label')}
-                />
+              <FormControlLabel
+                control={getDarkModeSwitch()}
+                label={i18next.t('darkmode.label')}
+              />
             </FormGroup>
-            <IconButton 
+            <IconButton
               edge="start"
               color="inherit"
               aria-label="menu"
               onClick={toggleDrawer}
             >
-              <MenuIcon  />
+              <MenuIcon />
             </IconButton>
           </Toolbar>
         </AppBar>
@@ -67,13 +68,17 @@ function App() {
         >
           <Typography variant='p'>Drawer</Typography>
         </Drawer>
-        <Introduction />
-        <Divider />
-        <ExperiencePanel />
-        <Divider />
-        <EducationPanel />
-        <Divider />
-        <LinksPanel />
+        <div style={{ marginTop: '100px' }}>
+          <Introduction />
+          <Divider />
+          <ExperiencePanel />
+          <Divider />
+          <EducationPanel />
+          <Divider />
+          <ProjectsPanel />
+          <Divider />
+          <LinksPanel />
+        </div>
       </Container>
     </ThemeProvider>
   )

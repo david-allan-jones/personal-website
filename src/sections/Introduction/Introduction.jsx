@@ -21,8 +21,8 @@ export default function Introduction() {
                 src={avatarSrc}
                 className={classes.avatar}
             />
-            <Typography style={{textAlign:"center"}} variant='h2'>{i18next.t('introduction.greeting')}</Typography>
-            <Typography style={{textAlign:"center"}} variant='h6'>{i18next.t('introduction.aboutMe')}</Typography>
+            <Typography style={{ textAlign: "center" }} variant='h2'>{i18next.t('introduction.greeting')}</Typography>
+            <Typography style={{ textAlign: "center" }} variant='h6'>{i18next.t('introduction.aboutMe')}</Typography>
         </React.Fragment>
     )
 }
