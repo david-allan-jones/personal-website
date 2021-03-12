@@ -7,6 +7,7 @@ import { createMuiTheme } from '@material-ui/core/styles'
 import { useState } from 'react'
 import i18next from './i18n/i18next'
 import MenuIcon from '@material-ui/icons/Menu'
+import SwipeableDrawer from '@material-ui/core/SwipeableDrawer'
 import {
   ThemeProvider,
   Switch,
@@ -16,15 +17,17 @@ import {
   AppBar,
   Toolbar,
   IconButton,
-  Typography,
-  Drawer
+  List,
+  ListItem,
+  ListItemText,
+  Link
 } from '@material-ui/core'
 
 const defaultTheme = createMuiTheme({})
 const darkMode = createMuiTheme({})
 
-function SectionWrapper({ children }) {
-  return <div style={{ marginTop: '80px' }}>
+function SectionWrapper({ children, anchor }) {
+  return <div id={anchor} style={{ paddingTop: '80px' }}>
     {children}
   </div>
 }
@@ -43,6 +46,14 @@ function App() {
   function toggleDrawer() {
     setDrawerOpen(!drawerOpen)
   }
+
+  const sections = [
+    { name: i18next.t('drawer.introduction'), anchor: 'introduction-section', component: <Introduction /> },
+    { name: i18next.t('drawer.experience'), anchor: 'experience-section', component: <ExperiencePanel /> },
+    { name: i18next.t('drawer.projects'), anchor: 'projects-section', component: <ProjectsPanel /> },
+    { name: i18next.t('drawer.education'), anchor: 'education-section', component: <EducationPanel /> },
+    { name: i18next.t('drawer.links'), anchor: 'links-section', component: <LinksPanel /> }
+  ]
 
   return (
     //TODO: Figure out how to utilize theme across all components
@@ -66,28 +77,27 @@ function App() {
             </IconButton>
           </Toolbar>
         </AppBar>
-        <Drawer
+        <SwipeableDrawer
+          style={{ width: '50%' }}
           anchor='right'
           open={drawerOpen}
           onClose={toggleDrawer}
         >
-          <Typography variant='p'>Drawer</Typography>
-        </Drawer>
-        <SectionWrapper>
-          <Introduction />
-        </SectionWrapper>
-        <SectionWrapper>
-          <ExperiencePanel />
-        </SectionWrapper>
-        <SectionWrapper>
-          <ProjectsPanel />
-        </SectionWrapper>
-        <SectionWrapper>
-          <EducationPanel />
-        </SectionWrapper>
-        <SectionWrapper>
-          <LinksPanel />
-        </SectionWrapper>
+          <List style={{ width: '250px' }}>
+            {sections.map((section) => (
+              <Link style={{ color: 'black', textDecoration: 'none' }} href={`#${section.anchor}`}>
+                <ListItem button key={section.name}>
+                  <ListItemText primary={section.name} />
+                </ListItem>
+              </Link>
+            ))}
+          </List>
+        </SwipeableDrawer>
+        {sections.map((section) => (
+          <SectionWrapper anchor={section.anchor}>
+            {section.component}
+          </SectionWrapper>
+        ))}
       </Container>
     </ThemeProvider>
   )
