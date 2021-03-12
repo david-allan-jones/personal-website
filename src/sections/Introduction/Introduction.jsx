@@ -3,6 +3,7 @@ import { makeStyles } from '@material-ui/core/styles'
 import { Avatar, Typography } from '@material-ui/core'
 import i18next from '../../i18n/i18next'
 import React from 'react'
+import TypeWriter from 'typewriter-effect'
 
 const useStyles = makeStyles((theme) => ({
     avatar: {
@@ -25,7 +26,23 @@ export default function Introduction() {
                     className={classes.avatar}
                 />
             </div>
-            <Typography style={{ textAlign: "center" }} variant='h2'>{i18next.t('introduction.greeting')}</Typography>
+            <Typography style={{ textAlign: "center" }} variant='h2'>
+                <TypeWriter
+                    onInit={(typeWriter) => {
+                        typeWriter.typeString(i18next.t('introduction.role.languageLeaner'))
+                            .pauseFor(800)
+                            .deleteAll()
+                            .typeString(i18next.t('introduction.role.webDeveloper'))
+                            .pauseFor(800)
+                            .deleteAll()
+                            .typeString(i18next.t('introduction.role.softwareEngineer'))
+                            .start()
+                    }}
+                    options={{
+                        delay: 80
+                    }}
+                />
+            </Typography>
             <Typography style={{ textAlign: "center" }} variant='h6'>{i18next.t('introduction.aboutMe')}</Typography>
         </React.Fragment>
     )
