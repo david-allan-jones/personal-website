@@ -26,10 +26,10 @@ export default function Introduction() {
                     className={classes.avatar}
                 />
             </div>
-            <Typography style={{ textAlign: "center" }} variant='h2'>
+            <Typography style={{ textAlign: "center" }} variant='h5'>
                 <TypeWriter
                     onInit={(typeWriter) => {
-                        typeWriter.typeString(i18next.t('introduction.role.languageLeaner'))
+                        typeWriter.typeString(i18next.t('introduction.role.languageLearner'))
                             .pauseFor(800)
                             .deleteAll()
                             .typeString(i18next.t('introduction.role.webDeveloper'))

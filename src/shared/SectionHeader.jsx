@@ -6,7 +6,7 @@ export default function SectionHeader({ children }) {
         <React.Fragment>
             <Typography
                 style={{ textAlign: "center" }}
-                variant='h3'
+                variant='h5'
             >
                 {children}
             </Typography>

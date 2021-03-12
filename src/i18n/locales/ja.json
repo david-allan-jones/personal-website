@@ -6,7 +6,11 @@
         "label": "ダークモード"
     },
     "introduction": {
-        "greeting": "ようこそ！",
+        "role": {
+            "languageLearner": "言語学習者",
+            "webDeveloper": "ウェブ開発者",
+            "softwareEngineer": "ソフトウェアエンジニア"
+        },
         "name": "ジョーンズデイビッド"
     },
     "experience": {

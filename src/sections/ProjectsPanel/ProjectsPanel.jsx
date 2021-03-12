@@ -22,7 +22,7 @@ export default function ExperiencePanel() {
                 return (
                     <React.Fragment>
                         <div style={{ textAlign: 'center' }}>
-                            <Link href={project.url} variant='h5'>{project.linkText}</Link>
+                            <Link href={project.url} variant='h6'>{project.linkText}</Link>
                         </div>
                         {getCarousel(project.carousel)}
                     </React.Fragment>
