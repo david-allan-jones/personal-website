@@ -26,7 +26,6 @@ export default function ExperiencePanel() {
                         </div>
                         {getCarousel(project.carousel)}
                     </React.Fragment>
-
                 )})
             }
         </div>

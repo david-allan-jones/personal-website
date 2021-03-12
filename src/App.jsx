@@ -1,13 +1,9 @@
-import Introduction from './sections/Introduction/Introduction'
-import ExperiencePanel from './sections/ExperiencePanel/ExperiencePanel'
-import EducationPanel from './sections/EducationPanel/EducationPanel'
-import ProjectsPanel from './sections/ProjectsPanel/ProjectsPanel'
-import LinksPanel from './sections/LinksPanel/LinksPanel'
 import { useState } from 'react'
 import i18next from './i18n/i18next'
 import MenuIcon from '@material-ui/icons/Menu'
 import SwipeableDrawer from '@material-ui/core/SwipeableDrawer'
 import { defaultTheme, darkTheme } from './themes'
+import sections from './sections'
 import {
   ThemeProvider,
   Switch,
@@ -20,7 +16,6 @@ import {
   List,
   ListItem,
   ListItemText,
-  Link
 } from '@material-ui/core'
 
 function SectionWrapper({ children, anchor }) {
@@ -44,14 +39,6 @@ function App() {
     setDrawerOpen(!drawerOpen)
   }
 
-  const sections = [
-    { name: i18next.t('drawer.introduction'), anchor: 'introduction-section', component: <Introduction /> },
-    { name: i18next.t('drawer.experience'), anchor: 'experience-section', component: <ExperiencePanel /> },
-    { name: i18next.t('drawer.projects'), anchor: 'projects-section', component: <ProjectsPanel /> },
-    { name: i18next.t('drawer.education'), anchor: 'education-section', component: <EducationPanel /> },
-    { name: i18next.t('drawer.links'), anchor: 'links-section', component: <LinksPanel /> }
-  ]
-
   return (
     <ThemeProvider theme={darkModeEnabled ? darkTheme : defaultTheme}>
       <Container>
@@ -65,7 +52,6 @@ function App() {
             </FormGroup>
             <IconButton
               style={{ marginLeft: 'auto' }}
-              edge='end'
               color='inherit'
               aria-label='menu'
               onClick={toggleDrawer}
@@ -75,21 +61,18 @@ function App() {
           </Toolbar>
         </AppBar>
         <SwipeableDrawer
-          style={{ width: '50%' }}
           anchor='right'
           open={drawerOpen}
           onClose={toggleDrawer}
         >
           <List style={{ width: '250px' }}>
             {sections.map((section) => (
-              //<Link style={{ color: 'black', textDecoration: 'none' }} href={`#${section.anchor}`}>
               <ListItem
                 button key={section.name}
                 onClick={() => document.getElementById(section.anchor).scrollIntoView({ behavior: 'smooth' })}
               >
                 <ListItemText primary={section.name} />
               </ListItem>
-              //</Link>
             ))}
           </List>
         </SwipeableDrawer>
