@@ -8,18 +8,16 @@ export default function LinksPanel() {
     return (
         <div>
             <SectionHeader>{i18next.t('links.header')}</SectionHeader>
-            <div style={{ textAlign: 'center' }}>
-                <LinkAvatar
-                    src={GitHubLogo}
-                    alt='GitHub'
-                    url='https://github.com/david-allan-jones?tab=repositories'
-                />
-                <LinkAvatar
-                    src={LinkedInLogo}
-                    alt='LinkedIn'
-                    url='https://www.linkedin.com/in/david-jones-407a06159/'
-                />
-            </div>
+            <LinkAvatar
+                src={GitHubLogo}
+                alt='GitHub'
+                url='https://github.com/david-allan-jones?tab=repositories'
+            />
+            <LinkAvatar
+                src={LinkedInLogo}
+                alt='LinkedIn'
+                url='https://www.linkedin.com/in/david-jones-407a06159/'
+            />
         </div>
     )
 }

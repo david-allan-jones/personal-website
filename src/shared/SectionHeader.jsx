@@ -5,7 +5,6 @@ export default function SectionHeader({ children }) {
     return (
         <React.Fragment>
             <Typography
-                style={{ textAlign: "center" }}
                 variant='h5'
             >
                 {children}
