@@ -15,7 +15,6 @@ export default [
         url: 'https://llc.ou.edu',
         linkText: i18next.t('projects.llc.header'),
         carousel: {
-            className: 'llc-carousel',
             items: [
                 { src: llcLanguage, alt: i18next.t('projects.llc.languages') },
                 { src: llcJapanese, alt: i18next.t('projects.llc.japanese') },
@@ -30,7 +29,6 @@ export default [
         url: 'https://play.google.com/store/apps/details?id=scmlaconference.llc&hl=en&gl=US',
         linkText: i18next.t('projects.scmla.header'),
         carousel: {
-            className: 'scmla-carousel',
             items: [
                 { src: scmlaDetails, alt: i18next.t('projects.scmla.details') },
                 { src: scmlaSessions, alt: i18next.t('projects.scmla.sessions') },

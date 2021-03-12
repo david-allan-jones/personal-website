@@ -2,7 +2,7 @@ import { useState } from 'react'
 import i18next from './i18n/i18next'
 import MenuIcon from '@material-ui/icons/Menu'
 import SwipeableDrawer from '@material-ui/core/SwipeableDrawer'
-import { defaultTheme, darkTheme } from './themes'
+import { lightTheme, darkTheme } from './themes'
 import sections from './sections'
 import {
   ThemeProvider,
@@ -16,6 +16,7 @@ import {
   List,
   ListItem,
   ListItemText,
+  CssBaseline,
 } from '@material-ui/core'
 
 function SectionWrapper({ children, anchor }) {
@@ -47,9 +48,10 @@ function App() {
   }
 
   return (
-    <ThemeProvider theme={darkModeEnabled ? darkTheme : defaultTheme}>
+    <ThemeProvider theme={darkModeEnabled ? darkTheme : lightTheme}>
+      <CssBaseline />
       <Container>
-        <AppBar color="primary" position='fixed'>
+        <AppBar color='primary' position='fixed'>
           <Toolbar>
             <FormGroup>
               <FormControlLabel
