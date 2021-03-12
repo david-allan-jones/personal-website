@@ -68,6 +68,7 @@ function App() {
               />
             </FormGroup>
             <IconButton
+              style={{ marginLeft: 'auto' }}
               edge='end'
               color='inherit'
               aria-label='menu'
