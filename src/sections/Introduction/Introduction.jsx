@@ -7,11 +7,10 @@ import TypeWriter from 'typewriter-effect'
 
 const useStyles = makeStyles((theme) => ({
     avatar: {
-        backgroundColor: '#3f51b5',
-        width: theme.spacing(30),
-        height: theme.spacing(30),
+        backgroundColor: theme.palette.primary.main,
+        width: theme.spacing(20),
+        height: theme.spacing(20),
         display: 'inline-block',
-        margin: '0 5px'
     }
 }))
 
