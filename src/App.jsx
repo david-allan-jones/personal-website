@@ -3,11 +3,11 @@ import ExperiencePanel from './sections/ExperiencePanel/ExperiencePanel'
 import EducationPanel from './sections/EducationPanel/EducationPanel'
 import ProjectsPanel from './sections/ProjectsPanel/ProjectsPanel'
 import LinksPanel from './sections/LinksPanel/LinksPanel'
-import { createMuiTheme } from '@material-ui/core/styles'
 import { useState } from 'react'
 import i18next from './i18n/i18next'
 import MenuIcon from '@material-ui/icons/Menu'
 import SwipeableDrawer from '@material-ui/core/SwipeableDrawer'
+import { defaultTheme, darkTheme } from './themes'
 import {
   ThemeProvider,
   Switch,
@@ -22,9 +22,6 @@ import {
   ListItemText,
   Link
 } from '@material-ui/core'
-
-const defaultTheme = createMuiTheme({})
-const darkMode = createMuiTheme({})
 
 function SectionWrapper({ children, anchor }) {
   return <div id={anchor} style={{ paddingTop: '80px' }}>
@@ -56,10 +53,9 @@ function App() {
   ]
 
   return (
-    //TODO: Figure out how to utilize theme across all components
-    <ThemeProvider theme={darkModeEnabled ? defaultTheme : darkMode}>
+    <ThemeProvider theme={darkModeEnabled ? darkTheme : defaultTheme}>
       <Container>
-        <AppBar position='fixed'>
+        <AppBar color="primary" position='fixed'>
           <Toolbar>
             <FormGroup>
               <FormControlLabel
@@ -86,11 +82,14 @@ function App() {
         >
           <List style={{ width: '250px' }}>
             {sections.map((section) => (
-              <Link style={{ color: 'black', textDecoration: 'none' }} href={`#${section.anchor}`}>
-                <ListItem button key={section.name}>
-                  <ListItemText primary={section.name} />
-                </ListItem>
-              </Link>
+              //<Link style={{ color: 'black', textDecoration: 'none' }} href={`#${section.anchor}`}>
+              <ListItem
+                button key={section.name}
+                onClick={() => document.getElementById(section.anchor).scrollIntoView({ behavior: 'smooth' })}
+              >
+                <ListItemText primary={section.name} />
+              </ListItem>
+              //</Link>
             ))}
           </List>
         </SwipeableDrawer>
