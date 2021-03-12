@@ -18,7 +18,12 @@ export default function LinkAvatar({ src, alt, url }) {
                 alt={alt}
                 onClick={() => window.location = url}
                 className={classes.link}
-                style={{"cursor": "pointer"}}
+                style={{
+                    width: '80px',
+                    height: '80px',
+                    margin: '0 15px 0 15px',
+                    cursor: 'pointer'
+                }}
             />
         </React.Fragment>
     )

@@ -1,10 +1,9 @@
 
 import Carousel from 'react-material-ui-carousel'
-import Image from 'material-ui-image'
 
 export default function ProjectCarousel({ className, items }) {
     function toCarouselItem({ src, alt }) {
-        return <Image
+        return <img
             key={alt}
             src={src}
             alt={alt}
@@ -13,11 +12,10 @@ export default function ProjectCarousel({ className, items }) {
 
     return (
         <Carousel
+            autoPlay={false}
             swipe={true}
             className={className}
-            autoPlay={false}
             animation='slide'
-            indicators={true}
         >
             {items.map(toCarouselItem)}
         </Carousel>

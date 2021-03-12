@@ -29,6 +29,8 @@
 }
 
 .scmla-carousel img {
+    width: 100%;
+    height: 100%;
     background-color: #EEEEEE;
     object-fit: contain !important;
     object-position: 50% 50%;

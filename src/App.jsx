@@ -11,7 +11,6 @@ import {
   ThemeProvider,
   Switch,
   Container,
-  Divider,
   FormGroup,
   FormControlLabel,
   AppBar,
@@ -23,6 +22,12 @@ import {
 
 const defaultTheme = createMuiTheme({})
 const darkMode = createMuiTheme({})
+
+function SectionWrapper({ children }) {
+  return <div style={{ marginTop: '80px' }}>
+    {children}
+  </div>
+}
 
 function App() {
   const [darkModeEnabled, setDarkModeEnabled] = useState(false)
@@ -43,7 +48,7 @@ function App() {
     //TODO: Figure out how to utilize theme across all components
     <ThemeProvider theme={darkModeEnabled ? defaultTheme : darkMode}>
       <Container>
-        <AppBar>
+        <AppBar position='fixed'>
           <Toolbar>
             <FormGroup>
               <FormControlLabel
@@ -52,9 +57,9 @@ function App() {
               />
             </FormGroup>
             <IconButton
-              edge="start"
-              color="inherit"
-              aria-label="menu"
+              edge='end'
+              color='inherit'
+              aria-label='menu'
               onClick={toggleDrawer}
             >
               <MenuIcon />
@@ -68,17 +73,21 @@ function App() {
         >
           <Typography variant='p'>Drawer</Typography>
         </Drawer>
-        <div style={{ marginTop: '100px' }}>
+        <SectionWrapper>
           <Introduction />
-          <Divider />
+        </SectionWrapper>
+        <SectionWrapper>
           <ExperiencePanel />
-          <Divider />
-          <EducationPanel />
-          <Divider />
+        </SectionWrapper>
+        <SectionWrapper>
           <ProjectsPanel />
-          <Divider />
+        </SectionWrapper>
+        <SectionWrapper>
+          <EducationPanel />
+        </SectionWrapper>
+        <SectionWrapper>
           <LinksPanel />
-        </div>
+        </SectionWrapper>
       </Container>
     </ThemeProvider>
   )
