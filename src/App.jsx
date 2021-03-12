@@ -38,11 +38,15 @@ function App() {
   function handleSwitch() {
     const newValue = !darkModeEnabled
     setDarkModeEnabled(newValue)
-    localStorage.setItem(storageKey, newValue)
+    if (newValue) {
+      localStorage.setItem(storageKey, newValue)
+    } else {
+      localStorage.removeItem(storageKey)
+    }
   }
 
   return (
-    <ThemeProvider theme={darkModeEnabled ? darkTheme : lightTheme}>
+    <ThemeProvider theme={darkModeEnabled ? { ...darkTheme } : { ...lightTheme }}>
       <CssBaseline/>
       <Container>
         <AppBar color='primary' position='fixed'>
