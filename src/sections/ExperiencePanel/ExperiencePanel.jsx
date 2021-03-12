@@ -7,11 +7,11 @@ import experiences from './experience'
 
 export default function ExperiencePanel() {
   return (
-    <div>
+    <React.Fragment>
       <SectionHeader>{i18next.t('experience.header')}</SectionHeader>
       <Grid container alignItems="center" spacing={10}>
         {experiences.map((experience) => (
-          <Grid key={experience.title} item xs={12} sm={4}>
+          <Grid key={experience.url} item xs={12} sm={4}>
             <MediaCard
               imageSrc={experience.imageSrc}
               title={experience.title}
@@ -23,6 +23,6 @@ export default function ExperiencePanel() {
           </Grid>
         ))}
       </Grid>
-    </div>
+    </React.Fragment>
   );
 }

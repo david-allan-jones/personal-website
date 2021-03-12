@@ -3,7 +3,7 @@ import ouLibrary from './img/ou-library.jpg'
 import scmlaLogo from './img/scmla-logo.png'
 import i18next from '../../i18n/i18next'
 
-export default [
+const experiences = [
     {
         imageSrc: okcSkyline,
         title: i18next.t('experience.paycom.name'),
@@ -29,3 +29,5 @@ export default [
         end: '2018'
     }
 ]
+
+export default experiences

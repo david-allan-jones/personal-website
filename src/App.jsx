@@ -31,31 +31,25 @@ function App() {
   const [darkModeEnabled, setDarkModeEnabled] = useState(JSON.parse(localStorage.getItem(storageKey)) || false)
   const [drawerOpen, setDrawerOpen] = useState(false)
 
-  console.log(darkModeEnabled)
-
-  function getDarkModeSwitch() {
-    return <Switch
-      checked={darkModeEnabled}
-      onChange={() => {
-        setDarkModeEnabled(!darkModeEnabled)
-        localStorage.setItem(storageKey, !darkModeEnabled)
-      }}
-    />
-  }
-
   function toggleDrawer() {
     setDrawerOpen(!drawerOpen)
   }
 
+  function handleSwitch() {
+    const newValue = !darkModeEnabled
+    setDarkModeEnabled(newValue)
+    localStorage.setItem(storageKey, newValue)
+  }
+
   return (
     <ThemeProvider theme={darkModeEnabled ? darkTheme : lightTheme}>
-      <CssBaseline />
+      <CssBaseline/>
       <Container>
         <AppBar color='primary' position='fixed'>
           <Toolbar>
             <FormGroup>
               <FormControlLabel
-                control={getDarkModeSwitch()}
+                control={<Switch checked={darkModeEnabled} onChange={handleSwitch} />}
                 label={i18next.t('darkmode.label')}
               />
             </FormGroup>
@@ -72,12 +66,14 @@ function App() {
         <SwipeableDrawer
           anchor='right'
           open={drawerOpen}
+          onOpen={() => {}}
           onClose={toggleDrawer}
         >
           <List style={{ width: '250px' }}>
             {sections.map((section) => (
               <ListItem
-                button key={section.name}
+                button
+                key={section.name}
                 onClick={() => document.getElementById(section.anchor).scrollIntoView({ behavior: 'smooth' })}
               >
                 <ListItemText primary={section.name} />
@@ -86,7 +82,7 @@ function App() {
           </List>
         </SwipeableDrawer>
         {sections.map((section) => (
-          <SectionWrapper anchor={section.anchor}>
+          <SectionWrapper key={section.name} anchor={section.anchor}>
             {section.component}
           </SectionWrapper>
         ))}

@@ -10,7 +10,7 @@ import scmlaDetails from './img/scmla-event-details.png'
 import scmlaPanels from './img/scmla-panels.png'
 import scmlaThanks from './img/scmla-thanks.png'
 
-export default [
+const projects = [
     {
         url: 'https://llc.ou.edu',
         linkText: i18next.t('projects.llc.header'),
@@ -42,3 +42,5 @@ export default [
         linkText: i18next.t('projects.personalWebsite.header')
     }
 ]
+
+export default projects
