@@ -32,8 +32,8 @@ export default [
         carousel: {
             className: 'scmla-carousel',
             items: [
-                { src: scmlaSessions, alt: i18next.t('projects.scmla.sessions') },
                 { src: scmlaDetails, alt: i18next.t('projects.scmla.details') },
+                { src: scmlaSessions, alt: i18next.t('projects.scmla.sessions') },
                 { src: scmlaPanels, alt: i18next.t('projects.scmla.panels') },
                 { src: scmlaThanks, alt: i18next.t('projects.scmla.thanks') }
             ]

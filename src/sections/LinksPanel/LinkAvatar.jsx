@@ -21,7 +21,7 @@ export default function LinkAvatar({ src, alt, url }) {
                 style={{
                     width: '80px',
                     height: '80px',
-                    margin: '0 15px 0 15px',
+                    margin: '0 50px 0 0',
                     cursor: 'pointer'
                 }}
             />
