@@ -14,7 +14,6 @@ export default function ProjectCarousel({ className, items }) {
             alt={alt}
         />
     }
-
     return (
         <Carousel
             navButtonsProps={{
