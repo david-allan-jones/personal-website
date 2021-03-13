@@ -31,10 +31,7 @@ export default function Introduction() {
             <Typography style={{ textAlign: "center" }} variant='h5'>
                 <TypeWriter
                     onInit={(typeWriter) => {
-                        typeWriter.typeString(i18next.t('introduction.role.languageLearner'))
-                            .pauseFor(800)
-                            .deleteAll()
-                            .typeString(i18next.t('introduction.role.webDeveloper'))
+                        typeWriter.typeString(i18next.t('introduction.role.webDeveloper'))
                             .pauseFor(800)
                             .deleteAll()
                             .typeString(i18next.t('introduction.role.softwareEngineer'))
@@ -45,7 +42,7 @@ export default function Introduction() {
                     }}
                 />
             </Typography>
-            <Paper style={{ marginTop: '50px', padding: '20px 30px 20px 30px'}}>
+            <Paper style={{ marginTop: '50px', padding: '20px 30px 20px 30px' }}>
                 <Typography variant='body1'>{i18next.t('introduction.aboutMe1')}</Typography>
                 <br></br><br></br>
                 <Typography variant='body1'>{i18next.t('introduction.aboutMe2')}</Typography>

@@ -16,13 +16,12 @@
     "introduction": {
         "header": "自己紹介",
         "role": {
-            "languageLearner": "言語学習者",
             "webDeveloper": "ウェブ開発者",
             "softwareEngineer": "ソフトウェアエンジニア"
         },
         "name": "ジョーンズ・デイビッド",
-        "aboutMe1": "I grew up in Tulsa, Oklahoma in a low income household. However, I did not let early challenges stop me from achieving my dreams. I graduated with a bachelor's degree in Computer Science in 2019, and have been working as technology professional ever since. My work in the past has included troubleshooting, web development, database administration, Android development and software design.",
-        "aboutMe2": "Some of my earliest memories are at the root of my passion for software and technology. I can still remember playing the Nintendo Entertainment System or Sega Genesis in our small apartment when I was just a few years old. Software has brought immeasurable joy to my life, and so I hope to pay in forward. Not by developing games, but by creating products and services that make the world a better place to live."
+        "aboutMe1": "私はオクラホマのタルサという町の裕福ではない家庭で育ちました。しかしながら、そのような困難な状況下でも自分の夢を叶えることを諦めませんでした。2019年にコンピューターサイエンスの学士号を取得し、それ以降IT関係のプロフェッショナルとして働いてきました。過去にはトラブル対応やウェブ開発、データベース管理、Android開発、ソフトウェアデザインなどを行ってきました。",
+        "aboutMe2": "私のソフトウェアやテクノロジーへの情熱の起源となったのは幼い頃の体験でした。幼い頃にファミコンやメガドライブで遊んだ記憶が今でも強く印象に残っています。ソフトウェアは私の人生に計り知れない喜びを与えてくれたので、恩返しをしたいと思っています。ゲームを開発するわけではありませんが、世界をより豊かにするような製品やサービスを作りたいと思っています。"
     },
     "experience": {
         "header": "職歴",
@@ -42,17 +41,17 @@
     "projects": {
         "header": "プロジェクト",
         "llc": {
-            "header": "言語学習センターの公式サイト"
+            "header": "オクラホマ大学言語学習センター公式サイト"
         },
         "scmla": {
-            "header": "SCMLA学会のアプリ"
+            "header": "SCMLA学会アプリ"
         }
     },
     "education": {
         "header": "学歴",
         "ou": {
             "title": "オクラホマ大学",
-            "detail": "コンピューターサイエンスの学士号"
+            "detail": "学士号(コンピューターサイエンス)"
         },
         "uec": {
             "title": "電気通信大学",
