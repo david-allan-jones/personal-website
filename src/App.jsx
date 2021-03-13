@@ -78,7 +78,10 @@ function App() {
               <ListItem
                 button
                 key={section.name}
-                onClick={() => document.getElementById(section.anchor).scrollIntoView({ behavior: 'smooth' })}
+                onClick={() => {
+                  document.getElementById(section.anchor).scrollIntoView({ behavior: 'smooth' })
+                  setTimeout(toggleDrawer, 1000)
+                }}
               >
                 <ListItemText primary={section.name} />
               </ListItem>
