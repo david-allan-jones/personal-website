@@ -1,17 +1,28 @@
 {
-    "common": {
-        "learnMore": "詳細"
+    "date": {
+        "rangeIndicator": "ー",
+        "may2019": "2019年5月",
+        "present": "現在",
+        "october2015": "2015年10月",
+        "2013": "2013年",
+        "2015": "2015年",
+        "2016": "2016年",
+        "2017": "2017年",
+        "2019": "2019年"
     },
     "darkmode": {
         "label": "ダークモード"
     },
     "introduction": {
+        "header": "自己紹介",
         "role": {
             "languageLearner": "言語学習者",
             "webDeveloper": "ウェブ開発者",
             "softwareEngineer": "ソフトウェアエンジニア"
         },
-        "name": "ジョーンズデイビッド"
+        "name": "ジョーンズ・デイビッド",
+        "aboutMe1": "I grew up in Tulsa, Oklahoma in a low income household. However, I did not let early challenges stop me from achieving my dreams. I graduated with a bachelor's degree in Computer Science in 2019, and have been working as technology professional ever since. My work in the past has included troubleshooting, web development, database administration, Android development and software design.",
+        "aboutMe2": "Some of my earliest memories are at the root of my passion for software and technology. I can still remember playing the Nintendo Entertainment System or Sega Genesis in our small apartment when I was just a few years old. Software has brought immeasurable joy to my life, and so I hope to pay in forward. Not by developing games, but by creating products and services that make the world a better place to live."
     },
     "experience": {
         "header": "職歴",
@@ -28,13 +39,40 @@
             "position": "Androidデベロッパー"
         }
     },
+    "projects": {
+        "header": "プロジェクト",
+        "llc": {
+            "header": "言語学習センターの公式サイト"
+        },
+        "scmla": {
+            "header": "SCMLA学会のアプリ"
+        },
+        "personalWebsite": {
+            "header": "このご覧になっているホームページ"
+        }
+    },
     "education": {
         "header": "学歴",
-        "ou": "オクラホマ大学",
-        "uec": "電気通信大学",
-        "tcc": "タルサ・コミュニティー・カレッジ"
+        "ou": {
+            "title": "オクラホマ大学",
+            "detail": "コンピューターサイエンスの学士号"
+        },
+        "uec": {
+            "title": "電気通信大学",
+            "detail": "短期交換留学プログラム（JUSST）"
+        },
+        "tcc": {
+            "title": "タルサ・コミュニティ・カレッジ",
+            "detail": "一般教育"
+        }
     },
     "links": {
-        "header": "リンク"
+        "header": "リンク",
+        "github": {
+            "tooltipTitle": "GitHub"
+        },
+        "linkedIn": {
+            "tooltipTitle": "LinkedIn"
+        }
     }
 }

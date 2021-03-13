@@ -7,7 +7,6 @@ export default function ProjectCarousel({ className, items }) {
     function toCarouselItem({ src, alt }) {
         return <img
             style={{
-                marginTop: '30px',
                 backgroundColor: theme.palette.background.paper
             }}
             key={alt}
@@ -18,7 +17,14 @@ export default function ProjectCarousel({ className, items }) {
 
     return (
         <Carousel
-            autoPlay={false}
+            navButtonsProps={{
+                style: {
+                    backgroundColor: theme.palette.primary.main
+                }
+            }}
+            autoPlay={true}
+            interval={8000}
+            stopAutoPlayOnHover={false}
             swipe={true}
             className={className}
             animation='slide'

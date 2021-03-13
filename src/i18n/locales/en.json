@@ -63,10 +63,16 @@
         },
         "tcc": {
             "title": "Tulsa Communinity College",
-            "detail": "Dual Enrollment / General Education"
+            "detail": "General Education"
         }
     },
     "links": {
-        "header": "Links"
+        "header": "Links",
+        "github": {
+            "tooltipTitle": "GitHub"
+        },
+        "linkedIn": {
+            "tooltipTitle": "LinkedIn"
+        }
     }
 }
