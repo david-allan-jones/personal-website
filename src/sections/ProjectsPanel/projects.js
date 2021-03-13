@@ -36,10 +36,6 @@ const projects = [
                 { src: scmlaThanks, alt: i18next.t('projects.scmla.thanks') }
             ]
         }
-    },
-    {
-        url: 'https://github.com/david-allan-jones/personal-website',
-        linkText: i18next.t('projects.personalWebsite.header')
     }
 ]
 
