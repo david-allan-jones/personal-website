@@ -1,9 +1,8 @@
+import { red } from '@material-ui/core/colors'
 import { createMuiTheme } from '@material-ui/core/styles'
 
 const commonPalette = {
-    primary: {
-        main: '#689f38'
-    },
+    primary: red,
     secondary: {
         main: '#ffffff'
     }

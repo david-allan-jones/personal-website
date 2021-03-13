@@ -47,7 +47,7 @@ function App() {
 
   return (
     <ThemeProvider theme={darkModeEnabled ? { ...darkTheme } : { ...lightTheme }}>
-      <CssBaseline/>
+      <CssBaseline />
       <Container>
         <AppBar color='primary' position='fixed'>
           <Toolbar>
@@ -70,7 +70,7 @@ function App() {
         <SwipeableDrawer
           anchor='right'
           open={drawerOpen}
-          onOpen={() => {}}
+          onOpen={() => { }}
           onClose={toggleDrawer}
         >
           <List style={{ width: '250px' }}>

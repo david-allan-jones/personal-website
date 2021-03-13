@@ -9,11 +9,15 @@ export default function LinksPanel() {
         <div>
             <SectionHeader>{i18next.t('links.header')}</SectionHeader>
             <LinkAvatar
+                tooltipTitle='GitHub'
+                tooltipLabel='github'
                 src={GitHubLogo}
                 alt='GitHub'
                 url='https://github.com/david-allan-jones?tab=repositories'
             />
             <LinkAvatar
+                tooltipTitle='LinkedIn'
+                tooltipLabel='linkedin'
                 src={LinkedInLogo}
                 alt='LinkedIn'
                 url='https://www.linkedin.com/in/david-jones-407a06159/'

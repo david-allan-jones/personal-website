@@ -8,7 +8,7 @@ import './ProjectsPanel.css'
 
 function getCarousel(carousel) {
     if (carousel) {
-        return <ProjectCarousel className='project-carousel' items={carousel.items} /> 
+        return <ProjectCarousel className='project-carousel' items={carousel.items} />
     }
     return null
 }
@@ -33,7 +33,8 @@ export default function ProjectsPanel() {
                         </Link>
                         {getCarousel(project.carousel)}
                     </div>
-                )})
+                )
+            })
             }
         </div>
     )

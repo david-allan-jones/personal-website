@@ -12,7 +12,7 @@ export default function SimpleAccordion() {
     <div>
       <SectionHeader>{i18next.t('education.header')}</SectionHeader>
       <Grid container alignItems="center" spacing={10}>
-        <Grid item xs={12} sm={4}>
+        <Grid item md={4} sm={6} xs={12}>
           <MediaCard
             imageSrc={ouLibarry}
             title={i18next.t('education.ou.title')}
@@ -22,7 +22,7 @@ export default function SimpleAccordion() {
             end={i18next.t('date.2019')}
           />
         </Grid>
-        <Grid item xs={12} sm={4}>
+        <Grid item md={4} sm={6} xs={12}>
           <MediaCard
             imageSrc={uecKoudou}
             title={i18next.t('education.uec.title')}
@@ -32,7 +32,7 @@ export default function SimpleAccordion() {
             end={i18next.t('date.2017')}
           />
         </Grid>
-        <Grid item xs={12} sm={4}>
+        <Grid item md={4} sm={6} xs={12}>
           <MediaCard
             imageSrc={tulsaSkyline}
             title={i18next.t('education.tcc.title')}

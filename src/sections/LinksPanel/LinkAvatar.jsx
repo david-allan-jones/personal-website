@@ -1,4 +1,5 @@
 import { makeStyles } from '@material-ui/core/styles'
+import { Tooltip } from '@material-ui/core'
 import React from "react";
 
 const useStyles = makeStyles((theme) => ({
@@ -8,23 +9,25 @@ const useStyles = makeStyles((theme) => ({
     }
 }))
 
-export default function LinkAvatar({ src, alt, url }) {
+export default function LinkAvatar({ tooltipTitle, tooltipLabel, src, alt, url }) {
     const classes = useStyles()
 
     return (
         <React.Fragment>
-            <img
-                src={src}
-                alt={alt}
-                onClick={() => window.location = url}
-                className={classes.link}
-                style={{
-                    width: '80px',
-                    height: '80px',
-                    margin: '0 50px 0 0',
-                    cursor: 'pointer'
-                }}
-            />
+            <Tooltip title={tooltipTitle} aria-label={tooltipLabel}>
+                <img   
+                    src={src}
+                    alt={alt}
+                    onClick={() => window.location = url}
+                    className={classes.link}
+                    style={{
+                        width: '80px',
+                        height: '80px',
+                        margin: '0 50px 0 0',
+                        cursor: 'pointer'
+                    }}
+                />
+            </Tooltip>
         </React.Fragment>
     )
 }

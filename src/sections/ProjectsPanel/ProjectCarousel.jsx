@@ -21,7 +21,7 @@ export default function ProjectCarousel({ className, items }) {
             autoPlay={false}
             swipe={true}
             className={className}
-            animation='fade'
+            animation='slide'
         >
             {items.map(toCarouselItem)}
         </Carousel>

@@ -11,7 +11,7 @@ export default function ExperiencePanel() {
       <SectionHeader>{i18next.t('experience.header')}</SectionHeader>
       <Grid container alignItems="center" spacing={10}>
         {experiences.map((experience) => (
-          <Grid key={experience.url} item xs={12} sm={4}>
+          <Grid key={experience.url} item md={4} sm={6} xs={12}>
             <MediaCard
               imageSrc={experience.imageSrc}
               title={experience.title}
