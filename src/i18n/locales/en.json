@@ -53,9 +53,18 @@
     },
     "education": {
         "header": "Education",
-        "ou": "The University of Oklahoma",
-        "uec": "The University of Electro-Communications",
-        "tcc": "Tulsa Communinity College"
+        "ou": {
+            "title": "The University of Oklahoma",
+            "detail": "B.S. Computer Science"
+        },
+        "uec": {
+            "title": "The University of Electro-Communications",
+            "detail": "JUSST Exchange Program"
+        },
+        "tcc": {
+            "title": "Tulsa Communinity College",
+            "detail": "Dual Enrollment / General Education"
+        }
     },
     "links": {
         "header": "Links"

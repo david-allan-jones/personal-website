@@ -15,7 +15,8 @@ export default function SimpleAccordion() {
         <Grid item xs={12} sm={4}>
           <MediaCard
             imageSrc={ouLibarry}
-            title={i18next.t('education.ou')}
+            title={i18next.t('education.ou.title')}
+            details={i18next.t('education.ou.detail')}
             url={'https://www.ou.edu/'}
             start={i18next.t('date.2015')}
             end={i18next.t('date.2019')}
@@ -24,7 +25,8 @@ export default function SimpleAccordion() {
         <Grid item xs={12} sm={4}>
           <MediaCard
             imageSrc={uecKoudou}
-            title={i18next.t('education.uec')}
+            title={i18next.t('education.uec.title')}
+            details={i18next.t('education.uec.detail')}
             url={'https://www.uec.ac.jp/eng/'}
             start={i18next.t('date.2016')}
             end={i18next.t('date.2017')}
@@ -33,7 +35,8 @@ export default function SimpleAccordion() {
         <Grid item xs={12} sm={4}>
           <MediaCard
             imageSrc={tulsaSkyline}
-            title={i18next.t('education.tcc')}
+            title={i18next.t('education.tcc.title')}
+            details={i18next.t('education.tcc.detail')}
             url={'https://www.tulsacc.edu/'}
             start={i18next.t('date.2013')}
             end={i18next.t('date.2015')}
