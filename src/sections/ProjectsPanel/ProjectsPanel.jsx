@@ -21,10 +21,10 @@ export default function ProjectsPanel() {
             <br></br>
             {projects.map((project) => {
                 return (
-                    <div key={project.linkText} style={{ textAlign: 'center' }}>
+                    <div key={project.linkText}>
                         <Link
                             style={{
-                                color: theme.palette.type === 'dark' ? theme.palette.primary.light : theme.palette.primary.dark
+                                color: theme.palette.type === 'dark' ? theme.palette.primary.light : theme.palette.primary.dark,
                             }}
                             href={project.url}
                             variant='h6'

@@ -1,6 +1,6 @@
 import avatarSrc from './img/avatar.png'
 import { makeStyles } from '@material-ui/core/styles'
-import { Avatar, Typography } from '@material-ui/core'
+import { Avatar, Paper, Typography } from '@material-ui/core'
 import i18next from '../../i18n/i18next'
 import React from 'react'
 import TypeWriter from 'typewriter-effect'
@@ -26,6 +26,9 @@ export default function Introduction() {
                 />
             </div>
             <Typography style={{ textAlign: "center" }} variant='h5'>
+                {i18next.t('introduction.name')}
+            </Typography>
+            <Typography style={{ textAlign: "center" }} variant='h5'>
                 <TypeWriter
                     onInit={(typeWriter) => {
                         typeWriter.typeString(i18next.t('introduction.role.languageLearner'))
@@ -42,7 +45,11 @@ export default function Introduction() {
                     }}
                 />
             </Typography>
-            <Typography style={{ textAlign: "center" }} variant='h6'>{i18next.t('introduction.aboutMe')}</Typography>
+            <Paper style={{ marginTop: '50px', padding: '20px 30px 20px 30px'}}>
+                <Typography variant='body1'>{i18next.t('introduction.aboutMe1')}</Typography>
+                <br></br><br></br>
+                <Typography variant='body1'>{i18next.t('introduction.aboutMe2')}</Typography>
+            </Paper>
         </React.Fragment>
     )
 }

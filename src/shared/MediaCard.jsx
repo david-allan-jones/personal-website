@@ -5,6 +5,7 @@ import CardActionArea from '@material-ui/core/CardActionArea'
 import CardContent from '@material-ui/core/CardContent'
 import CardMedia from '@material-ui/core/CardMedia'
 import Typography from '@material-ui/core/Typography'
+import i18next from '../i18n/i18next'
 
 const useStyles = makeStyles({
   media: {
@@ -22,7 +23,7 @@ export default function MediaCard({ imageSrc, title, details, url, start, end })
   function getTimespanText() {
     if (start && end) {
       return <Typography variant="body2" color="textSecondary" component="p">
-        {`${start} - ${end}`}
+        {`${start} ${i18next.t('date.rangeIndicator')} ${end}`}
       </Typography>
     }
     return null

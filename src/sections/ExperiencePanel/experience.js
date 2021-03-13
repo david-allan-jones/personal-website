@@ -9,24 +9,24 @@ const experiences = [
         title: i18next.t('experience.paycom.name'),
         details: i18next.t('experience.paycom.position'),
         url: 'https://www.paycom.com/',
-        start: 'May 2019',
-        end: 'present'
+        start: i18next.t('date.may2019'),
+        end: i18next.t('date.present')
     },
     {
         imageSrc: ouLibrary,
         title: i18next.t('experience.ou.name'),
         details: i18next.t('experience.ou.position'),
         url: 'https://www.ou.edu/',
-        start: 'October 2015',
-        end: 'May 2019'
+        start: i18next.t('date.october2015'),
+        end: i18next.t('date.may2019')
     },
     {
         imageSrc: scmlaLogo,
         title: i18next.t('experience.scmla.name'),
         details: i18next.t('experience.scmla.position'),
         url: 'https://www.southcentralmla.org/',
-        start: '2016',
-        end: '2018'
+        start: i18next.t('date.2016'),
+        end: i18next.t('date.2017')
     }
 ]
 

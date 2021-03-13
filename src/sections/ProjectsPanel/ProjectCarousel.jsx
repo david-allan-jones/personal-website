@@ -7,6 +7,7 @@ export default function ProjectCarousel({ className, items }) {
     function toCarouselItem({ src, alt }) {
         return <img
             style={{
+                marginTop: '30px',
                 backgroundColor: theme.palette.background.paper
             }}
             key={alt}
@@ -20,7 +21,7 @@ export default function ProjectCarousel({ className, items }) {
             autoPlay={false}
             swipe={true}
             className={className}
-            animation='slide'
+            animation='fade'
         >
             {items.map(toCarouselItem)}
         </Carousel>

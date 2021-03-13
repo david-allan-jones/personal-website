@@ -17,8 +17,8 @@ export default function SimpleAccordion() {
             imageSrc={ouLibarry}
             title={i18next.t('education.ou')}
             url={'https://www.ou.edu/'}
-            start={'2015'}
-            end={'2019'}
+            start={i18next.t('date.2015')}
+            end={i18next.t('date.2019')}
           />
         </Grid>
         <Grid item xs={12} sm={4}>
@@ -26,8 +26,8 @@ export default function SimpleAccordion() {
             imageSrc={uecKoudou}
             title={i18next.t('education.uec')}
             url={'https://www.uec.ac.jp/eng/'}
-            start={'2016'}
-            end={'2017'}
+            start={i18next.t('date.2016')}
+            end={i18next.t('date.2017')}
           />
         </Grid>
         <Grid item xs={12} sm={4}>
@@ -35,8 +35,8 @@ export default function SimpleAccordion() {
             imageSrc={tulsaSkyline}
             title={i18next.t('education.tcc')}
             url={'https://www.tulsacc.edu/'}
-            start={'2013'}
-            end={'2015'}
+            start={i18next.t('date.2013')}
+            end={i18next.t('date.2015')}
           />
         </Grid>
       </Grid>
