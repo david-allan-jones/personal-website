@@ -21,7 +21,7 @@ export default function ProjectsPanel() {
             <br></br>
             {projects.map((project) => {
                 return (
-                    <div style={{ textAlign: 'center' }}key={project.linkText}>
+                    <div style={{ textAlign: 'center' }} key={project.linkText}>
                         <Link
                             style={{
                                 color: theme.palette.type === 'dark' ? theme.palette.primary.light : theme.palette.primary.dark,

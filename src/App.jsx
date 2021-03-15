@@ -1,6 +1,8 @@
 import { useState } from 'react'
-import i18next from './i18n/i18next'
+import i18next, { supportedLocales, languageStorage } from './i18n/i18next'
 import MenuIcon from '@material-ui/icons/Menu'
+import TranslateIcon from '@material-ui/icons/Translate'
+import ExpandMoreIcon from '@material-ui/icons/ExpandMore'
 import SwipeableDrawer from '@material-ui/core/SwipeableDrawer'
 import { lightTheme, darkTheme } from './themes'
 import sections from './sections'
@@ -17,6 +19,10 @@ import {
   ListItem,
   ListItemText,
   CssBaseline,
+  Menu,
+  MenuItem,
+  Typography,
+  Divider
 } from '@material-ui/core'
 
 function SectionWrapper({ children, anchor }) {
@@ -30,6 +36,7 @@ const storageKey = 'darkModeEnabled'
 function App() {
   const [darkModeEnabled, setDarkModeEnabled] = useState(JSON.parse(localStorage.getItem(storageKey)) || false)
   const [drawerOpen, setDrawerOpen] = useState(false)
+  const [languageAnchor, setLanguageAnchor] = useState(null)
 
   function toggleDrawer() {
     setDrawerOpen(!drawerOpen)
@@ -45,20 +52,41 @@ function App() {
     }
   }
 
+  function handleLanguageMenu(locale) {
+    languageStorage.write(locale)
+    window.location.reload()
+  }
+
   return (
     <ThemeProvider theme={darkModeEnabled ? { ...darkTheme } : { ...lightTheme }}>
       <CssBaseline />
       <Container>
         <AppBar color='primary' position='fixed'>
           <Toolbar>
-            <FormGroup>
-              <FormControlLabel
-                control={<Switch checked={darkModeEnabled} onChange={handleSwitch} />}
-                label={i18next.t('darkmode.label')}
-              />
-            </FormGroup>
             <IconButton
               style={{ marginLeft: 'auto' }}
+              color='inherit'
+              aria-label='menu'
+              onClick={(e) => setLanguageAnchor(e.currentTarget)}
+            >
+              <TranslateIcon />
+              <Typography variant='button'>{i18next.t(`languages.${i18next.language}`)}</Typography>
+              <ExpandMoreIcon />
+            </IconButton>
+            <Menu
+              id="language-menu"
+              anchorEl={languageAnchor}
+              keepMounted
+              open={Boolean(languageAnchor)}
+              onClose={() => setLanguageAnchor(null)}
+            >
+              {supportedLocales.map((locale) => (
+                <MenuItem key={locale} onClick={() => handleLanguageMenu(locale)}>
+                    {i18next.t(`languages.${locale}`)}
+                </MenuItem>
+              ))}
+            </Menu>
+            <IconButton
               color='inherit'
               aria-label='menu'
               onClick={toggleDrawer}
@@ -86,6 +114,15 @@ function App() {
                 <ListItemText primary={section.name} />
               </ListItem>
             ))}
+            <Divider />
+            <ListItem>
+              <FormGroup>
+                <FormControlLabel
+                  control={<Switch checked={darkModeEnabled} onChange={handleSwitch} />}
+                  label={i18next.t('darkmode.label')}
+                />
+              </FormGroup>
+            </ListItem>
           </List>
         </SwipeableDrawer>
         {sections.map((section) => (
