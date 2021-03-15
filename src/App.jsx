@@ -21,7 +21,8 @@ import {
   CssBaseline,
   Menu,
   MenuItem,
-  Typography
+  Typography,
+  Divider
 } from '@material-ui/core'
 
 function SectionWrapper({ children, anchor }) {
@@ -62,12 +63,6 @@ function App() {
       <Container>
         <AppBar color='primary' position='fixed'>
           <Toolbar>
-            <FormGroup>
-              <FormControlLabel
-                control={<Switch checked={darkModeEnabled} onChange={handleSwitch} />}
-                label={i18next.t('darkmode.label')}
-              />
-            </FormGroup>
             <IconButton
               style={{ marginLeft: 'auto' }}
               color='inherit'
@@ -119,6 +114,15 @@ function App() {
                 <ListItemText primary={section.name} />
               </ListItem>
             ))}
+            <Divider />
+            <ListItem>
+              <FormGroup>
+                <FormControlLabel
+                  control={<Switch checked={darkModeEnabled} onChange={handleSwitch} />}
+                  label={i18next.t('darkmode.label')}
+                />
+              </FormGroup>
+            </ListItem>
           </List>
         </SwipeableDrawer>
         {sections.map((section) => (
