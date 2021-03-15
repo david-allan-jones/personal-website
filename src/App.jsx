@@ -81,7 +81,7 @@ function App() {
               onClose={() => setLanguageAnchor(null)}
             >
               {supportedLocales.map((locale) => (
-                <MenuItem onClick={() => handleLanguageMenu(locale)}>
+                <MenuItem key={locale} onClick={() => handleLanguageMenu(locale)}>
                     {i18next.t(`languages.${locale}`)}
                 </MenuItem>
               ))}
