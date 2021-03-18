@@ -22,12 +22,42 @@ import {
   Menu,
   MenuItem,
   Button,
-  Drawer
+  Drawer,
+  makeStyles,
+  Typography,
+  Tabs,
+  Tab,
+  Divider
 } from '@material-ui/core'
+
+const useStyles = makeStyles((theme) => ({
+  drawerList: {
+    width: '250px'
+  },
+  pageContainer: {
+    paddingTop: '80px'
+  },
+  navMenu: {
+    [theme.breakpoints.up('sm')]: {
+      display: 'none'
+    }
+  },
+  hideSm: {
+    [theme.breakpoints.down('sm')]: {
+      display: 'none'
+    }
+  },
+  hideXs: {
+    [theme.breakpoints.down('xs')]: {
+      display: 'none'
+    }
+  }
+}))
 
 const storageKey = 'darkModeEnabled'
 
 function App() {
+  const classes = useStyles()
   const [navDrawerOpen, setNavDrawerOpen] = useState(false)
   const [languageAnchor, setLanguageAnchor] = useState(null)
   const [optionsDrawerOpen, setOptionsDrawerOpen] = useState(false)
@@ -63,7 +93,18 @@ function App() {
         <Router>
           <AppBar color='primary' position='fixed'>
             <Toolbar>
+              <Tabs className={classes.hideXs}>
+                {navigations.map((navigation) => (
+                  <Tab
+                    key={navigation.label}
+                    component={Link}
+                    to={navigation.path}
+                    label={navigation.label}
+                  />
+                ))}
+              </Tabs>
               <IconButton
+                  className={classes.navMenu}
                   color='inherit'
                   aria-label='menu'
                   onClick={toggleNavDrawer}
@@ -71,7 +112,11 @@ function App() {
                 <MenuIcon />
               </IconButton>
               <Drawer anchor='left' open={navDrawerOpen} onClose={toggleNavDrawer}>
-                <List style={{width: '250px'}}>
+                <List className={classes.drawerList}>
+                  <ListItem>
+                    <Typography variant='h6'>{i18next.t('navigation.header')}</Typography>
+                  </ListItem>
+                  <Divider />
                   {navigations.map((navigation) => (
                       <ListItem
                         onClick={() => toggleNavDrawer()}
@@ -92,6 +137,9 @@ function App() {
                 onClick={(e) => setLanguageAnchor(e.currentTarget)}
               >
                 <TranslateIcon />
+                <Typography className={classes.hideSm} variant='body2'>
+                  {i18next.t(`languages.${i18next.language}`)}
+                </Typography>
                 <ExpandMoreIcon />
               </Button>
               <Menu
@@ -115,7 +163,11 @@ function App() {
                 <SettingsIcon />
               </IconButton>
               <Drawer anchor='right' open={optionsDrawerOpen} onClose={toggleOptionsDrawer}>
-                <List style={{ width: '250px' }}>
+                <List className={classes.drawerList}>
+                  <ListItem>
+                    <Typography variant='h6'>{i18next.t('settings')}</Typography>
+                  </ListItem>
+                  <Divider />
                   <ListItem>
                     <FormGroup>
                       <FormControlLabel
@@ -131,7 +183,7 @@ function App() {
           <Switch>
             {navigations.map((navigation) => (
               <Route key={navigation.label} path={navigation.path} exact>
-                <div style={{paddingTop: '80px'}}>
+                <div className={classes.pageContainer}>
                   {navigation.component}
                 </div>
               </Route>

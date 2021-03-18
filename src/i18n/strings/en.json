@@ -78,6 +78,7 @@
         }
     },
     "navigation": {
+        "header": "Navigation",
         "home": "Home",
         "contact": "Contact"
     },
@@ -89,5 +90,6 @@
         "scmla": {
             "header": "SCMLA Conference Android App"
         }
-    }
+    },
+    "settings": "Settings"
 }

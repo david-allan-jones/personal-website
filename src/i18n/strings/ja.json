@@ -1,8 +1,8 @@
 {
     "contact": {
         "header": "問い合わせ先",
-        "firstName": "名前",
-        "lastName": "名字",
+        "firstName": "名",
+        "lastName": "姓",
         "email": "メールアドレス",
         "message": "メッセージ",
         "submit": "送信",
@@ -78,6 +78,7 @@
         }
     },
     "navigation": {
+        "header": "メニュー",
         "home": "ホーム",
         "contact": "問い合わせ"
     },
@@ -89,5 +90,6 @@
         "scmla": {
             "header": "SCMLA学会アプリ"
         }
-    }
+    },
+    "settings": "設定"
 }
