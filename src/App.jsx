@@ -3,12 +3,13 @@ import i18next, { supportedLocales, languageStorage } from './i18n/i18next'
 import MenuIcon from '@material-ui/icons/Menu'
 import TranslateIcon from '@material-ui/icons/Translate'
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore'
-import SwipeableDrawer from '@material-ui/core/SwipeableDrawer'
+import SettingsIcon from '@material-ui/icons/Settings'
 import { lightTheme, darkTheme } from './themes'
-import sections from './sections'
+import { BrowserRouter as Router, Route, Switch, Link } from 'react-router-dom'
+import navigations from './navigations'
 import {
   ThemeProvider,
-  Switch,
+  Switch as MaterialSwitch,
   Container,
   FormGroup,
   FormControlLabel,
@@ -17,29 +18,57 @@ import {
   IconButton,
   List,
   ListItem,
-  ListItemText,
   CssBaseline,
   Menu,
   MenuItem,
+  Button,
+  Drawer,
+  makeStyles,
   Typography,
+  Tabs,
+  Tab,
   Divider
 } from '@material-ui/core'
 
-function SectionWrapper({ children, anchor }) {
-  return <div id={anchor} style={{ paddingTop: '80px' }}>
-    {children}
-  </div>
-}
+const useStyles = makeStyles((theme) => ({
+  drawerList: {
+    width: '250px'
+  },
+  pageContainer: {
+    paddingTop: '80px'
+  },
+  navMenu: {
+    [theme.breakpoints.up('sm')]: {
+      display: 'none'
+    }
+  },
+  hideSm: {
+    [theme.breakpoints.down('sm')]: {
+      display: 'none'
+    }
+  },
+  hideXs: {
+    [theme.breakpoints.down('xs')]: {
+      display: 'none'
+    }
+  }
+}))
 
 const storageKey = 'darkModeEnabled'
 
 function App() {
-  const [darkModeEnabled, setDarkModeEnabled] = useState(JSON.parse(localStorage.getItem(storageKey)) || false)
-  const [drawerOpen, setDrawerOpen] = useState(false)
+  const classes = useStyles()
+  const [navDrawerOpen, setNavDrawerOpen] = useState(false)
   const [languageAnchor, setLanguageAnchor] = useState(null)
+  const [optionsDrawerOpen, setOptionsDrawerOpen] = useState(false)
+  const [darkModeEnabled, setDarkModeEnabled] = useState(JSON.parse(localStorage.getItem(storageKey)) || false)
 
-  function toggleDrawer() {
-    setDrawerOpen(!drawerOpen)
+  function toggleNavDrawer() {
+    setNavDrawerOpen(!navDrawerOpen)
+  }
+
+  function toggleOptionsDrawer() {
+    setOptionsDrawerOpen(!optionsDrawerOpen)
   }
 
   function handleSwitch() {
@@ -61,75 +90,106 @@ function App() {
     <ThemeProvider theme={darkModeEnabled ? { ...darkTheme } : { ...lightTheme }}>
       <CssBaseline />
       <Container>
-        <AppBar color='primary' position='fixed'>
-          <Toolbar>
-            <IconButton
-              style={{ marginLeft: 'auto' }}
-              color='inherit'
-              aria-label='menu'
-              onClick={(e) => setLanguageAnchor(e.currentTarget)}
-            >
-              <TranslateIcon />
-              <Typography variant='button'>{i18next.t(`languages.${i18next.language}`)}</Typography>
-              <ExpandMoreIcon />
-            </IconButton>
-            <Menu
-              id="language-menu"
-              anchorEl={languageAnchor}
-              keepMounted
-              open={Boolean(languageAnchor)}
-              onClose={() => setLanguageAnchor(null)}
-            >
-              {supportedLocales.map((locale) => (
-                <MenuItem key={locale} onClick={() => handleLanguageMenu(locale)}>
-                    {i18next.t(`languages.${locale}`)}
-                </MenuItem>
-              ))}
-            </Menu>
-            <IconButton
-              color='inherit'
-              aria-label='menu'
-              onClick={toggleDrawer}
-            >
-              <MenuIcon />
-            </IconButton>
-          </Toolbar>
-        </AppBar>
-        <SwipeableDrawer
-          anchor='right'
-          open={drawerOpen}
-          onOpen={() => { }}
-          onClose={toggleDrawer}
-        >
-          <List style={{ width: '250px' }}>
-            {sections.map((section) => (
-              <ListItem
-                button
-                key={section.name}
-                onClick={() => {
-                  window.location.hash = section.anchor
-                  toggleDrawer()
-                }}
+        <Router>
+          <AppBar color='primary' position='fixed'>
+            <Toolbar>
+              <Tabs className={classes.hideXs}>
+                {navigations.map((navigation) => (
+                  <Tab
+                    key={navigation.label}
+                    component={Link}
+                    to={navigation.path}
+                    label={navigation.label}
+                  />
+                ))}
+              </Tabs>
+              <IconButton
+                  className={classes.navMenu}
+                  color='inherit'
+                  aria-label='menu'
+                  onClick={toggleNavDrawer}
               >
-                <ListItemText primary={section.name} />
-              </ListItem>
+                <MenuIcon />
+              </IconButton>
+              <Drawer anchor='left' open={navDrawerOpen} onClose={toggleNavDrawer}>
+                <List className={classes.drawerList}>
+                  <ListItem>
+                    <Typography variant='h6'>{i18next.t('navigation.header')}</Typography>
+                  </ListItem>
+                  <Divider />
+                  {navigations.map((navigation) => (
+                      <ListItem
+                        onClick={() => toggleNavDrawer()}
+                        button
+                        key={navigation.label}
+                        component={Link} 
+                        to={navigation.path}
+                      >
+                        {navigation.label}
+                      </ListItem>
+                  ))}
+                </List>
+              </Drawer>
+              <Button
+                style={{ marginLeft: 'auto' }}
+                color='inherit'
+                aria-label='menu'
+                onClick={(e) => setLanguageAnchor(e.currentTarget)}
+              >
+                <TranslateIcon />
+                <Typography className={classes.hideSm} variant='body2'>
+                  {i18next.t(`languages.${i18next.language}`)}
+                </Typography>
+                <ExpandMoreIcon />
+              </Button>
+              <Menu
+                id="language-menu"
+                anchorEl={languageAnchor}
+                keepMounted
+                open={Boolean(languageAnchor)}
+                onClose={() => setLanguageAnchor(null)}
+              >
+                {supportedLocales.map((locale) => (
+                  <MenuItem key={locale} onClick={() => handleLanguageMenu(locale)}>
+                    {i18next.t(`languages.${locale}`)}
+                  </MenuItem>
+                ))}
+              </Menu>
+              <IconButton
+                color='inherit'
+                aria-label='menu'
+                onClick={toggleOptionsDrawer}
+              >
+                <SettingsIcon />
+              </IconButton>
+              <Drawer anchor='right' open={optionsDrawerOpen} onClose={toggleOptionsDrawer}>
+                <List className={classes.drawerList}>
+                  <ListItem>
+                    <Typography variant='h6'>{i18next.t('settings')}</Typography>
+                  </ListItem>
+                  <Divider />
+                  <ListItem>
+                    <FormGroup>
+                      <FormControlLabel
+                        control={<MaterialSwitch checked={darkModeEnabled} onChange={handleSwitch} />}
+                        label={i18next.t('darkmode.label')}
+                      />
+                    </FormGroup>
+                  </ListItem>
+                </List>
+              </Drawer>
+            </Toolbar>
+          </AppBar>
+          <Switch>
+            {navigations.map((navigation) => (
+              <Route key={navigation.label} path={navigation.path} exact>
+                <div className={classes.pageContainer}>
+                  {navigation.component}
+                </div>
+              </Route>
             ))}
-            <Divider />
-            <ListItem>
-              <FormGroup>
-                <FormControlLabel
-                  control={<Switch checked={darkModeEnabled} onChange={handleSwitch} />}
-                  label={i18next.t('darkmode.label')}
-                />
-              </FormGroup>
-            </ListItem>
-          </List>
-        </SwipeableDrawer>
-        {sections.map((section) => (
-          <SectionWrapper key={section.name} anchor={section.anchor}>
-            {section.component}
-          </SectionWrapper>
-        ))}
+          </Switch>
+        </Router>
       </Container>
     </ThemeProvider>
   )

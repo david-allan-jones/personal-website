@@ -1,4 +1,15 @@
 {
+    "contact": {
+        "header": "問い合わせ先",
+        "firstName": "名",
+        "lastName": "姓",
+        "email": "メールアドレス",
+        "message": "メッセージ",
+        "submit": "送信",
+        "success": "メッセージの送信に成功しました",
+        "error": "送信エラー。しばらく経ってから再度お試しください。",
+        "modalClose": "閉じる"
+    },
     "date": {
         "rangeIndicator": "ー",
         "may2019": "2019年5月",
@@ -66,6 +77,11 @@
             "tooltipTitle": "LinkedIn"
         }
     },
+    "navigation": {
+        "header": "メニュー",
+        "home": "ホーム",
+        "contact": "問い合わせ"
+    },
     "projects": {
         "header": "プロジェクト",
         "llc": {
@@ -74,5 +90,6 @@
         "scmla": {
             "header": "SCMLA学会アプリ"
         }
-    }
+    },
+    "settings": "設定"
 }

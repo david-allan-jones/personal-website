@@ -1,4 +1,15 @@
 {
+    "contact": {
+        "header": "Contact Me",
+        "firstName": "First Name",
+        "lastName": "Last Name",
+        "email": "Email",
+        "message": "Message",
+        "submit": "Submit",
+        "success": "Your message was successfully received!",
+        "error": "Something went wrong trying to send your message. Please try again later.",
+        "modalClose": "Close"
+    },
     "date": {
         "rangeIndicator": "-",
         "may2019": "May 2019",
@@ -66,6 +77,11 @@
             "tooltipTitle": "LinkedIn"
         }
     },
+    "navigation": {
+        "header": "Navigation",
+        "home": "Home",
+        "contact": "Contact"
+    },
     "projects": {
         "header": "Projects",
         "llc": {
@@ -74,5 +90,6 @@
         "scmla": {
             "header": "SCMLA Conference Android App"
         }
-    }
+    },
+    "settings": "Settings"
 }

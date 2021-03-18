@@ -11,7 +11,7 @@ export default function SimpleAccordion() {
   return (
     <div>
       <SectionHeader>{i18next.t('education.header')}</SectionHeader>
-      <Grid container alignItems="center" spacing={10}>
+      <Grid container alignItems="center" spacing={4}>
         <Grid item md={4} sm={6} xs={12}>
           <MediaCard
             imageSrc={ouLibarry}
