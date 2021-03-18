@@ -1,9 +1,9 @@
 import React from 'react'
-import i18next from '../../i18n/i18next'
-import SectionHeader from '../../shared/SectionHeader'
+import i18next from '../i18n/i18next'
+import SectionHeader from '../shared/SectionHeader'
 import ProjectCarousel from './ProjectCarousel'
 import { Link, useTheme } from '@material-ui/core'
-import projects from './projects'
+import projects from './model'
 import './ProjectsPanel.css'
 
 function getCarousel(carousel) {
@@ -13,7 +13,7 @@ function getCarousel(carousel) {
     return null
 }
 
-export default function ProjectsPanel() {
+export default function Projects() {
     const theme = useTheme()
     return (
         <div>

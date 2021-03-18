@@ -1,4 +1,4 @@
-import i18next from '../../i18n/i18next'
+import i18next from '../i18n/i18next'
 import llcHomepage from './img/llc-homepage.png'
 import llcLanguage from './img/llc-languages-home.png'
 import llcJapanese from './img/llc-japanese-films.png'
