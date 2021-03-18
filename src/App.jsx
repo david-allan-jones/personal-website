@@ -93,8 +93,8 @@ function App() {
         <Router>
           <AppBar color='primary' position='fixed'>
             <Toolbar>
-              <Tabs className={classes.hideXs}>
-                {navigations.map((navigation) => (
+              <Tabs value={false} className={classes.hideXs}>
+                {navigations.map((navigation, index) => (
                   <Tab
                     key={navigation.label}
                     component={Link}
