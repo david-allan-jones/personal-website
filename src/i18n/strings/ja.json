@@ -1,4 +1,15 @@
 {
+    "contact": {
+        "header": "問い合わせ先",
+        "firstName": "名前",
+        "lastName": "名字",
+        "email": "メールアドレス",
+        "message": "メッセージ",
+        "submit": "送信",
+        "success": "メッセージの送信に成功しました",
+        "error": "送信エラー。しばらく経ってから再度お試しください。",
+        "modalClose": "閉じる"
+    },
     "date": {
         "rangeIndicator": "ー",
         "may2019": "2019年5月",
@@ -65,6 +76,10 @@
         "linkedIn": {
             "tooltipTitle": "LinkedIn"
         }
+    },
+    "navigation": {
+        "home": "ホーム",
+        "contact": "問い合わせ"
     },
     "projects": {
         "header": "プロジェクト",

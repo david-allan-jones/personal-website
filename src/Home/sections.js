@@ -1,9 +1,9 @@
-import i18next from './i18n/i18next'
-import Introduction from './sections/Introduction/Introduction'
-import ExperiencePanel from './sections/ExperiencePanel/ExperiencePanel'
-import ProjectsPanel from './sections/ProjectsPanel/ProjectsPanel'
-import EducationPanel from './sections/EducationPanel/EducationPanel'
-import LinksPanel from './sections/LinksPanel/LinksPanel'
+import i18next from '../i18n/i18next'
+import Introduction from './Introduction/Introduction'
+import ExperiencePanel from './ExperiencePanel/ExperiencePanel'
+import ProjectsPanel from './ProjectsPanel/ProjectsPanel'
+import EducationPanel from './EducationPanel/EducationPanel'
+import LinksPanel from './LinksPanel/LinksPanel'
 
 const sections = [
     { name: i18next.t('introduction.header'), anchor: 'introduction-section', component: <Introduction /> },
