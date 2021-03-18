@@ -46,23 +46,17 @@ export default function Contact() {
     }
 
     function handleSubmit() {
-        fetch('https://contact.davidjonesdev.com', {
+        const formData = new FormData()
+        formData.append('firstName', firstName)
+        formData.append('lastName', lastName)
+        formData.append('email', email)
+        formData.append('message', message)
+        fetch('https://formspree.io/f/mzbknnro', {
             method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify({
-                firstName,
-                lastName,
-                email,
-                message
-            })
-        }).then((response) => {
-            if (response.ok) {
-                setOpenSuccessModal(true)
-            } else {
-                setOpenErrorModal(true)
-            }
+            body: formData,
+            mode: 'no-cors'
+        }).then(() => {
+            setOpenSuccessModal(true)
         }).catch(() => {
             setOpenErrorModal(true)
         })
