@@ -3,14 +3,6 @@ import { Button, FormControl, TextField, Typography, useTheme } from '@material-
 import ResultModal from './ResultModal'
 import i18next from '../i18n/i18next'
 
-const validateName = (string) => {
-    return /^[a-zA-Z]+$/.test(string)
-}
-
-const validateEmail = (string) => {
-    return /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/.test(string)
-}
-
 export default function Contact() {
     const theme = useTheme()
 
@@ -27,17 +19,18 @@ export default function Contact() {
 
     function handleFirstNameChange(event) {
         setFirstName(event.target.value)
-        setValidFirstName(validateName(event.target.value))
+        setValidFirstName(event.target.value.length > 0)
     }
 
     function handleLastNameChange(event) {
         setLastName(event.target.value)
-        setValidLastName(validateName(event.target.value))
+        setValidLastName(event.target.value.length > 0)
     }
 
     function handleEmailChange(event) {
+        const regex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/
         setEmail(event.target.value)
-        setValidEmail(validateEmail(event.target.value))
+        setValidEmail(regex.test(event.target.value))
     }
 
     function handleMessageChange(event) {
