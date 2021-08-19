@@ -1,8 +1,7 @@
 {
     "contact": {
         "header": "Contact Me",
-        "firstName": "First Name",
-        "lastName": "Last Name",
+        "name": "Name",
         "email": "Email",
         "message": "Message",
         "submit": "Submit",

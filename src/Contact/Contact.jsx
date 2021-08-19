@@ -61,16 +61,9 @@ export default function Contact() {
             <FormControl>
                 <Typography variant='h5' style={{marginBottom: '20px'}}>{i18next.t('contact.header')}</Typography>
                 <TextField
-                    id='first-name'
+                    id='name'
                     onChange={handleFirstNameChange}
-                    label={i18next.t('contact.firstName')}
-                    variant='outlined'
-                    style={{marginBottom: '10px'}}
-                />
-                <TextField
-                    id='last-name'
-                    onChange={handleLastNameChange}
-                    label={i18next.t('contact.lastName')}
+                    label={i18next.t('contact.name')}
                     variant='outlined'
                     style={{marginBottom: '10px'}}
                 />

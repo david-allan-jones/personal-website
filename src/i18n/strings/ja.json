@@ -1,8 +1,7 @@
 {
     "contact": {
         "header": "問い合わせ先",
-        "firstName": "名",
-        "lastName": "姓",
+        "name": "名前",
         "email": "メールアドレス",
         "message": "メッセージ",
         "submit": "送信",
