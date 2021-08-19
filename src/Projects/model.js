@@ -26,7 +26,7 @@ const projects = [
         }
     },
     {
-        url: 'https://play.google.com/store/apps/details?id=scmlaconference.llc&hl=en&gl=US',
+        //url: 'https://play.google.com/store/apps/details?id=scmlaconference.llc&hl=en&gl=US',
         linkText: i18next.t('projects.scmla.header'),
         carousel: {
             items: [

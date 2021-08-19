@@ -25,6 +25,7 @@ export default function Projects() {
                         <Link
                             style={{
                                 color: theme.palette.type === 'dark' ? theme.palette.primary.light : theme.palette.primary.dark,
+                                textDecoration: project.url ? 'underline' : 'none',
                             }}
                             href={project.url}
                             variant='h6'
