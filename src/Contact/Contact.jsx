@@ -6,10 +6,8 @@ import i18next from '../i18n/i18next'
 export default function Contact() {
     const theme = useTheme()
 
-    const [firstName, setFirstName] = useState('')
-    const [validFirstName, setValidFirstName] = useState(false)
-    const [lastName, setLastName] = useState('')
-    const [validLastName, setValidLastName] = useState(false)
+    const [name, setName] = useState('')
+    const [validName, setValidName] = useState(false)
     const [email, setEmail] = useState('')
     const [validEmail, setValidEmail] = useState(false)
     const [message, setMessage] = useState('')
@@ -17,14 +15,9 @@ export default function Contact() {
     const [openSuccessModal, setOpenSuccessModal] = useState(false)
     const [openErrorModal, setOpenErrorModal] = useState(false)
 
-    function handleFirstNameChange(event) {
-        setFirstName(event.target.value)
-        setValidFirstName(event.target.value.length > 0)
-    }
-
-    function handleLastNameChange(event) {
-        setLastName(event.target.value)
-        setValidLastName(event.target.value.length > 0)
+    function handleNameChange(event) {
+        setName(event.target.value)
+        setValidName(event.target.value.length > 0)
     }
 
     function handleEmailChange(event) {
@@ -40,8 +33,7 @@ export default function Contact() {
 
     function handleSubmit() {
         const formData = new FormData()
-        formData.append('firstName', firstName)
-        formData.append('lastName', lastName)
+        formData.append('name', name)
         formData.append('email', email)
         formData.append('message', message)
         fetch('https://formspree.io/f/mzbknnro', {
@@ -54,32 +46,32 @@ export default function Contact() {
             setOpenErrorModal(true)
         })
     }
-    
-    const disableButton = !(validFirstName && validLastName && validEmail && validMessage)
+
+    const disableButton = !(validName && validEmail && validMessage)
     return (
         <React.Fragment>
             <FormControl>
-                <Typography variant='h5' style={{marginBottom: '20px'}}>{i18next.t('contact.header')}</Typography>
+                <Typography variant='h5' style={{ marginBottom: '20px' }}>{i18next.t('contact.header')}</Typography>
                 <TextField
                     id='name'
-                    onChange={handleFirstNameChange}
+                    onChange={handleNameChange}
                     label={i18next.t('contact.name')}
                     variant='outlined'
-                    style={{marginBottom: '10px'}}
+                    style={{ marginBottom: '10px' }}
                 />
                 <TextField
                     id='email'
                     onChange={handleEmailChange}
                     label={i18next.t('contact.email')}
                     variant='outlined'
-                    style={{marginBottom: '10px'}}
+                    style={{ marginBottom: '10px' }}
                 />
                 <TextField
                     id='message'
                     onChange={handleMessageChange}
                     label={i18next.t('contact.message')}
                     variant='outlined'
-                    style={{marginBottom: '10px'}}
+                    style={{ marginBottom: '10px' }}
                     rows={5}
                     multiline
                 />
