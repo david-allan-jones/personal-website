@@ -27,6 +27,7 @@ export default function ProjectCarousel({ className, items }) {
             swipe={true}
             className={className}
             animation='slide'
+            navButtonsAlwaysVisible={true}
         >
             {items.map(toCarouselItem)}
         </Carousel>
