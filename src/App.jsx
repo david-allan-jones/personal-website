@@ -11,7 +11,7 @@ import { BrowserRouter as Router, Route, Switch, Link } from 'react-router-dom'
 import navigations from './navigations'
 import {
   ThemeProvider,
-  Switch as MaterialSwitch,
+  Switch as MuiSwitch,
   Container,
   FormGroup,
   FormControlLabel,
@@ -77,13 +77,15 @@ function App() {
                   xs: 'none'
                 }
               }}>
-                {navigations.map((navigation, index) => (
-                  <Tab
-                    key={navigation.label}
-                    component={Link}
-                    to={navigation.path}
-                    label={navigation.label}
-                  />
+                {navigations.map(navigation => (
+                  <div style={{color: 'white', fontWeight:'bold'}}>
+                    <Tab
+                      key={navigation.label}
+                      component={Link}
+                      to={navigation.path}
+                      label={navigation.label}
+                    />
+                  </div>   
                 ))}
               </Tabs>
               <IconButton
@@ -163,7 +165,7 @@ function App() {
                   <ListItem>
                     <FormGroup>
                       <FormControlLabel
-                        control={<MaterialSwitch checked={darkModeEnabled} onChange={handleSwitch} />}
+                        control={<MuiSwitch color='secondary' checked={darkModeEnabled} onChange={handleSwitch} />}
                         label={i18next.t('darkmode.label')}
                       />
                     </FormGroup>
