@@ -7,7 +7,8 @@
         "submit": "送信",
         "success": "メッセージの送信に成功しました",
         "error": "送信エラー。しばらく経ってから再度お試しください。",
-        "modalClose": "閉じる"
+        "modalClose": "閉じる",
+        "info": ""
     },
     "date": {
         "rangeIndicator": "ー",

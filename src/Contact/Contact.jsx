@@ -49,15 +49,17 @@ export default function Contact() {
 
     const disableButton = !(validName && validEmail && validMessage)
     return (
-        <React.Fragment>
-            <FormControl>
+        <React.Fragment>    
+            <FormControl fullWidth>
                 <Typography variant='h5' style={{ marginBottom: '20px' }}>{i18next.t('contact.header')}</Typography>
+                <Typography variant='p' style={{ marginBottom: '20px' }}>{i18next.t('contact.info')}</Typography>
                 <TextField
                     id='name'
                     onChange={handleNameChange}
                     label={i18next.t('contact.name')}
                     variant='outlined'
                     style={{ marginBottom: '10px' }}
+                    fullWidth
                 />
                 <TextField
                     id='email'
@@ -65,6 +67,7 @@ export default function Contact() {
                     label={i18next.t('contact.email')}
                     variant='outlined'
                     style={{ marginBottom: '10px' }}
+                    fullWidth
                 />
                 <TextField
                     id='message'
@@ -74,6 +77,7 @@ export default function Contact() {
                     style={{ marginBottom: '10px' }}
                     rows={5}
                     multiline
+                    fullWidth
                 />
                 <Button
                     disabled={disableButton}
@@ -82,6 +86,7 @@ export default function Contact() {
                         color: disableButton ? theme.palette.type : '#FFFFFF',
                         backgroundColor: disableButton ? theme.palette.background.paper : theme.palette.primary.dark
                     }}
+                    fullWidth
                 >
                     {i18next.t('contact.submit')}
                 </Button>

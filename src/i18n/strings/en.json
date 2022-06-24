@@ -7,7 +7,8 @@
         "submit": "Submit",
         "success": "Your message was successfully received!",
         "error": "Something went wrong trying to send your message. Please try again later.",
-        "modalClose": "Close"
+        "modalClose": "Close",
+        "info": "If you would like to contact me about work opportunities or other projects, please send me a message using the contact form below and I will reach out at my earliest convenience."
     },
     "date": {
         "rangeIndicator": "-",
