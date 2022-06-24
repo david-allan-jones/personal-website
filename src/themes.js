@@ -1,5 +1,5 @@
-import { green, red } from '@material-ui/core/colors'
-import { createMuiTheme } from '@material-ui/core/styles'
+import { green, red } from '@mui/material/colors'
+import { createTheme } from '@mui/material/styles'
 
 const commonPalette = {
     primary: {
@@ -10,15 +10,15 @@ const commonPalette = {
     }
 }
 
-export const lightTheme = createMuiTheme({
+export const lightTheme = createTheme({
     palette: {
         ...commonPalette
     }
 })
 
-export const darkTheme = createMuiTheme({
+export const darkTheme = createTheme({
     palette: {
-        type: 'dark',
+        mode: 'dark',
         ...commonPalette
     }
 })

@@ -1,4 +1,5 @@
-import { Modal, Fade, Paper, Typography, Button, makeStyles } from '@material-ui/core'
+import { Modal, Fade, Paper, Typography, Button } from '@mui/material'
+import { makeStyles } from '@mui/styles'
 import i18next from '../i18n/i18next'
 
 const useStyles = makeStyles(() => ({

@@ -1,8 +1,7 @@
 import React, { useEffect, useState } from "react"
 import i18next from '../i18n/i18next'
 import SectionHeader from '../shared/SectionHeader'
-import MediaCard from '../shared/MediaCard'
-import { Grid, Paper, Typography, Link } from '@material-ui/core'
+import { Grid, Paper, Typography, Link } from '@mui/material'
 
 const WHITELIST = [
     'boosted-reformat',
@@ -14,7 +13,6 @@ const mapToDataModel = async (rawProjectData) => {
     for (let i = 0; i < rawProjectData.length; i++) {
         const datum = rawProjectData[i]
         if (WHITELIST.includes(datum.name)) {
-            const languages = 
             data.push({
                 description: datum.description,
                 languages: await fetch(datum.languages_url)
@@ -31,12 +29,11 @@ const mapToDataModel = async (rawProjectData) => {
 function GithubShowcase() {
     const [data, setData] = useState([])
 
-    console.log(data)
-    useEffect(async () => {
-        const resp = await fetch('https://api.github.com/users/david-allan-jones/repos')
-        const raw = await resp.json()
-        const data = await mapToDataModel(raw)
-        setData(data)
+    useEffect(() => {
+        fetch('https://api.github.com/users/david-allan-jones/repos')
+            .then(resp => resp.json())
+            .then(decoded => mapToDataModel(decoded))
+            .then(data => setData(data))
     }, [])
 
     return <React.Fragment>
@@ -54,7 +51,7 @@ function GithubShowcase() {
                 <br />
                 <Typography variant='p'>{projectData.description}</Typography>
                 <br /><br />
-                <Typography bold={true} variant='p'>{i18next.t('projects.github.langs')}: {projectData.languages.join(', ')}</Typography>
+                <Typography variant='p'>{i18next.t('projects.github.langs')}: {projectData.languages.join(', ')}</Typography>
                 <br />
                 <Link variant='p' href={projectData.url}>{i18next.t('projects.github.link')}</Link>
                 <br />

@@ -1,6 +1,6 @@
 import avatarSrc from './img/avatar.png'
-import { makeStyles } from '@material-ui/core/styles'
-import { Avatar, Paper, Typography } from '@material-ui/core'
+import { makeStyles } from '@mui/styles'
+import { Avatar, Paper, Typography } from '@mui/material'
 import i18next from '../../i18n/i18next'
 import React from 'react'
 import TypeWriter from 'typewriter-effect'

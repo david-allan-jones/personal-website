@@ -5,7 +5,7 @@ import MediaCard from '../../shared/MediaCard'
 import ouLibarry from '../ExperiencePanel/img/ou-library.jpg'
 import uecKoudou from './img/uec-koudou.jpg'
 import tulsaSkyline from './img/tulsa-skyline.jpg'
-import { Grid } from '@material-ui/core'
+import { Grid } from '@mui/material'
 
 export default function SimpleAccordion() {
   return (

@@ -1,5 +1,5 @@
 
-import { useTheme } from '@material-ui/core'
+import { useTheme } from '@mui/material'
 import Carousel from 'react-material-ui-carousel'
 
 export default function ProjectCarousel({ className, items }) {

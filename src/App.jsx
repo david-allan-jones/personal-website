@@ -1,9 +1,11 @@
 import { useState } from 'react'
 import i18next, { supportedLocales, languageStorage } from './i18n/i18next'
-import MenuIcon from '@material-ui/icons/Menu'
-import TranslateIcon from '@material-ui/icons/Translate'
-import ExpandMoreIcon from '@material-ui/icons/ExpandMore'
-import SettingsIcon from '@material-ui/icons/Settings'
+import {
+  Menu as MenuIcon,
+  Translate as TranslateIcon,
+  ExpandMore as ExpandMoreIcon,
+  Settings as SettingsIcon
+} from '@mui/icons-material'
 import { lightTheme, darkTheme } from './themes'
 import { BrowserRouter as Router, Route, Switch, Link } from 'react-router-dom'
 import navigations from './navigations'
@@ -23,41 +25,15 @@ import {
   MenuItem,
   Button,
   Drawer,
-  makeStyles,
   Typography,
   Tabs,
   Tab,
   Divider
-} from '@material-ui/core'
-
-const useStyles = makeStyles((theme) => ({
-  drawerList: {
-    width: '250px'
-  },
-  pageContainer: {
-    paddingTop: '80px'
-  },
-  navMenu: {
-    [theme.breakpoints.up('sm')]: {
-      display: 'none'
-    }
-  },
-  hideSm: {
-    [theme.breakpoints.down('sm')]: {
-      display: 'none'
-    }
-  },
-  hideXs: {
-    [theme.breakpoints.down('xs')]: {
-      display: 'none'
-    }
-  }
-}))
+} from '@mui/material'
 
 const storageKey = 'darkModeEnabled'
 
 function App() {
-  const classes = useStyles()
   const [navDrawerOpen, setNavDrawerOpen] = useState(false)
   const [languageAnchor, setLanguageAnchor] = useState(null)
   const [optionsDrawerOpen, setOptionsDrawerOpen] = useState(false)
@@ -86,14 +62,21 @@ function App() {
     window.location.reload()
   }
 
+  console.log(darkModeEnabled ? darkTheme : lightTheme)
+
   return (
-    <ThemeProvider theme={darkModeEnabled ? { ...darkTheme } : { ...lightTheme }}>
+    <ThemeProvider theme={darkModeEnabled ? darkTheme : lightTheme}>
       <CssBaseline />
       <Container>
         <Router>
           <AppBar color='primary' position='fixed'>
             <Toolbar>
-              <Tabs value={false} className={classes.hideXs}>
+              <Tabs value={false} sx={{
+                display: {
+                  sm: 'block',
+                  xs: 'none'
+                }
+              }}>
                 {navigations.map((navigation, index) => (
                   <Tab
                     key={navigation.label}
@@ -104,15 +87,20 @@ function App() {
                 ))}
               </Tabs>
               <IconButton
-                  className={classes.navMenu}
                   color='inherit'
                   aria-label='menu'
                   onClick={toggleNavDrawer}
+                  sx={{
+                    display: {
+                      sm: 'none',
+                      xs: 'block'
+                    }
+                  }}
               >
                 <MenuIcon />
               </IconButton>
               <Drawer anchor='left' open={navDrawerOpen} onClose={toggleNavDrawer}>
-                <List className={classes.drawerList}>
+                <List style={{width: '250px'}}>
                   <ListItem>
                     <Typography variant='h6'>{i18next.t('navigation.header')}</Typography>
                   </ListItem>
@@ -137,7 +125,11 @@ function App() {
                 onClick={(e) => setLanguageAnchor(e.currentTarget)}
               >
                 <TranslateIcon />
-                <Typography className={classes.hideSm} variant='body2'>
+                <Typography variant='body2' sx={{
+                  display: {
+                    sm: 'none'
+                  }
+                }}>
                   {i18next.t(`languages.${i18next.language}`)}
                 </Typography>
                 <ExpandMoreIcon />
@@ -163,7 +155,7 @@ function App() {
                 <SettingsIcon />
               </IconButton>
               <Drawer anchor='right' open={optionsDrawerOpen} onClose={toggleOptionsDrawer}>
-                <List className={classes.drawerList}>
+                <List style={{width: '250px'}}>
                   <ListItem>
                     <Typography variant='h6'>{i18next.t('settings')}</Typography>
                   </ListItem>
@@ -183,7 +175,7 @@ function App() {
           <Switch>
             {navigations.map((navigation) => (
               <Route key={navigation.label} path={navigation.path} exact>
-                <div className={classes.pageContainer}>
+                <div style={{paddingTop: '80px'}}>
                   {navigation.component}
                 </div>
               </Route>
