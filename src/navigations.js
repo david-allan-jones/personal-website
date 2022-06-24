@@ -5,7 +5,7 @@ import Contact from './Contact/Contact'
 
 const navigations = [
     { label: i18next.t('navigation.home'), path: '/', component: <Home /> },
-    { label: i18next.t('projects.header'), path: '/projects', component: <Projects /> },
+    { label: i18next.t('navigation.projects'), path: '/projects', component: <Projects /> },
     { label: i18next.t('navigation.contact'), path: '/contact', component: <Contact /> }
 ]
 

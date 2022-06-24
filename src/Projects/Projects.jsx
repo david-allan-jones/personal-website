@@ -2,6 +2,7 @@ import React from 'react'
 import i18next from '../i18n/i18next'
 import SectionHeader from '../shared/SectionHeader'
 import ProjectCarousel from './ProjectCarousel'
+import GithubShowcase from './GithubShowcase'
 import { Link, useTheme } from '@material-ui/core'
 import projects from './model'
 import './ProjectsPanel.css'
@@ -37,6 +38,7 @@ export default function Projects() {
                 )
             })
             }
+            <GithubShowcase />
         </div>
     )
 }

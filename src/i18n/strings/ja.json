@@ -79,15 +79,21 @@
     "navigation": {
         "header": "メニュー",
         "home": "ホーム",
+        "projects": "プロジェクト",
         "contact": "問い合わせ"
     },
     "projects": {
-        "header": "プロジェクト",
+        "header": "注目のプロジェクト",
         "llc": {
             "header": "オクラホマ大学言語学習センター公式サイト"
         },
         "scmla": {
             "header": "SCMLA学会アプリ"
+        },
+        "github": {
+            "header": "GitHubでホストされているプロジェクト",
+            "langs": "技術",
+            "link": "リンク"
         }
     },
     "settings": "設定"

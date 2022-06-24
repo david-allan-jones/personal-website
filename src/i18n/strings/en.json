@@ -79,15 +79,21 @@
     "navigation": {
         "header": "Navigation",
         "home": "Home",
+        "projects": "Projects",
         "contact": "Contact"
     },
     "projects": {
-        "header": "Projects",
+        "header": "Featured Projects",
         "llc": {
             "header": "University of Oklahoma - Language Learning Center Website"
         },
         "scmla": {
             "header": "SCMLA Conference Android App"
+        },
+        "github": {
+            "header": "Other Projects",
+            "langs": "Language(s)",
+            "link": "Link"
         }
     },
     "settings": "Settings"
