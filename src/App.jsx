@@ -69,7 +69,7 @@ function App() {
       <CssBaseline />
       <Container>
         <Router>
-          <AppBar color='primary' position='fixed'>
+        <AppBar position='fixed' sx={{ backgroundColor: 'primary.main' }}>
             <Toolbar>
               <Tabs value={false} sx={{
                 display: {
