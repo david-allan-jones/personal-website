@@ -4,8 +4,9 @@ import SectionHeader from '../shared/SectionHeader'
 import { Grid, Paper, Typography, Link } from '@mui/material'
 
 const WHITELIST = [
+    'contactserver',
     'boosted-reformat',
-    'rakuten-price-checker'
+    'rakuten-price-checker',
 ]
 
 const mapToDataModel = async (rawProjectData) => {
@@ -23,7 +24,9 @@ const mapToDataModel = async (rawProjectData) => {
             })
         }
     }
-    return data
+    return data.sort((a, b) => {
+        return WHITELIST.indexOf(a.name) - WHITELIST.indexOf(b.name)
+    })
 }
 
 function GithubShowcase() {
@@ -36,7 +39,7 @@ function GithubShowcase() {
             .then(data => setData(data))
     }, [])
 
-    return <React.Fragment>
+    return <div style={{ marginBottom: '3rem' }}>
         <SectionHeader>{i18next.t('projects.github.header')}</SectionHeader>
         <br />
         {(data.length ===0) && <Typography variant='p'>There was a problem loading the Github project list.</Typography>}
@@ -48,6 +51,7 @@ function GithubShowcase() {
                 <div style={{ color: 'white', backgroundColor: '#798897', padding: '5px 5px 5px 5px', borderRadius: '5px'}}>
                     <Typography variant='h5'>{projectData.name}</Typography>
                 </div>
+                <div style={{ padding: '5px 5px 5px 5px' }}>
                 <br />
                 <Typography variant='p'>{projectData.description}</Typography>
                 <br /><br />
@@ -55,11 +59,12 @@ function GithubShowcase() {
                 <br />
                 <Link variant='p' href={projectData.url}>{i18next.t('projects.github.link')}</Link>
                 <br />
+                </div>
             </Paper>
             </Grid>
         ))}
         </Grid>        
-    </React.Fragment>
+    </div>
 }
 
 export default GithubShowcase
