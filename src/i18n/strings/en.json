@@ -12,6 +12,8 @@
     },
     "date": {
         "rangeIndicator": "-",
+        "january2023": "January 2023",
+        "october2022": "October 2022",
         "may2019": "May 2019",
         "present": "present",
         "october2015": "October 2015",
@@ -41,9 +43,13 @@
     },
     "experience": {
         "header": "Experience",
+        "paypay": {
+            "name": "PayPay Corporation",
+            "position": "Frontend Engineer"
+        },
         "paycom": {
             "name": "Paycom",
-            "position": "Software Developer II"
+            "position": "Software Developer"
         },
         "ou": {
             "name": "The University of Oklahoma",

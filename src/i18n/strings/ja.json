@@ -12,6 +12,8 @@
     },
     "date": {
         "rangeIndicator": "ー",
+        "january2023": "2023年1月",
+        "october2022": "2022年10月",
         "may2019": "2019年5月",
         "present": "現在",
         "october2015": "2015年10月",
@@ -41,6 +43,10 @@
     },
     "experience": {
         "header": "職歴",
+        "paypay": {
+            "name": "PayPay株式会社",
+            "position": "フロントエンドエンジニア"
+        },
         "paycom": {
             "name": "Paycom",
             "position": "ソフトウェア開発者"
