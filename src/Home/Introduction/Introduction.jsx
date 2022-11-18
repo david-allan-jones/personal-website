@@ -28,7 +28,7 @@ export default function Introduction() {
             <Typography style={{ textAlign: "center" }} variant='h5'>
                 {i18next.t('introduction.name')}
             </Typography>
-            <Typography style={{ textAlign: "center" }} variant='h5'>
+            <Typography style={{ textAlign: "center", fontFamily: 'monospace' }} variant='h5'>
                 <TypeWriter
                     onInit={(typeWriter) => {
                         typeWriter.typeString(i18next.t('introduction.role.webDeveloper'))

@@ -25,7 +25,7 @@ export default function Projects() {
                     <div style={{ textAlign: 'center' }} key={project.linkText}>
                         <Link
                             style={{
-                                color: theme.palette.type === 'dark' ? theme.palette.primary.light : theme.palette.primary.dark,
+                                color: '#f27573',
                                 textDecoration: project.url ? 'underline' : 'none',
                             }}
                             href={project.url}

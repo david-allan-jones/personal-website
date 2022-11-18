@@ -57,7 +57,7 @@ function GithubShowcase() {
                 <br /><br />
                 <Typography variant='p'>{i18next.t('projects.github.langs')}: {projectData.languages.join(', ')}</Typography>
                 <br />
-                <Link variant='p' href={projectData.url}>{i18next.t('projects.github.link')}</Link>
+                <Link variant='p'  style={{ color: '#f27573' }} href={projectData.url}>{i18next.t('projects.github.link')}</Link>
                 <br />
                 </div>
             </Paper>
