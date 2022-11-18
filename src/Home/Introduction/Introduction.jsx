@@ -1,4 +1,4 @@
-import avatarSrc from './img/avatar.png'
+import avatarSrc from './img/avatar.jpg'
 import { makeStyles } from '@mui/styles'
 import { Avatar, Paper, Typography } from '@mui/material'
 import i18next from '../../i18n/i18next'
