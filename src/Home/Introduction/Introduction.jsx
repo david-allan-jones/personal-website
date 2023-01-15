@@ -1,4 +1,4 @@
-import avatarSrc from './img/avatar.png'
+import avatarSrc from './img/avatar.jpg'
 import { makeStyles } from '@mui/styles'
 import { Avatar, Paper, Typography } from '@mui/material'
 import i18next from '../../i18n/i18next'
@@ -28,7 +28,7 @@ export default function Introduction() {
             <Typography style={{ textAlign: "center" }} variant='h5'>
                 {i18next.t('introduction.name')}
             </Typography>
-            <Typography style={{ textAlign: "center" }} variant='h5'>
+            <Typography style={{ textAlign: "center", fontFamily: 'monospace' }} variant='h5'>
                 <TypeWriter
                     onInit={(typeWriter) => {
                         typeWriter.typeString(i18next.t('introduction.role.webDeveloper'))
@@ -44,8 +44,6 @@ export default function Introduction() {
             </Typography>
             <Paper style={{ marginTop: '50px', padding: '20px 30px 20px 30px' }}>
                 <Typography variant='body1'>{i18next.t('introduction.aboutMe1')}</Typography>
-                <br></br><br></br>
-                <Typography variant='body1'>{i18next.t('introduction.aboutMe2')}</Typography>
             </Paper>
         </React.Fragment>
     )

@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import { Button, FormControl, TextField, Typography, useTheme } from '@mui/material'
 import ResultModal from './ResultModal'
 import i18next from '../i18n/i18next'
+import SectionHeader from '../shared/SectionHeader'
 
 export default function Contact() {
     const theme = useTheme()
@@ -51,7 +52,7 @@ export default function Contact() {
     return (
         <React.Fragment>    
             <FormControl fullWidth>
-                <Typography variant='h5' style={{ marginBottom: '20px' }}>{i18next.t('contact.header')}</Typography>
+                <SectionHeader>{i18next.t('contact.header')}</SectionHeader>
                 <Typography variant='p' style={{ marginBottom: '20px' }}>{i18next.t('contact.info')}</Typography>
                 <TextField
                     id='name'
