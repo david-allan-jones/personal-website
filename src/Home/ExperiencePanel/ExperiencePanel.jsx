@@ -2,7 +2,7 @@ import React from 'react'
 import i18next from '../../i18n/i18next'
 import SectionHeader from '../../shared/SectionHeader'
 import MediaCard from '../../shared/MediaCard'
-import { Grid, Tooltip } from '@mui/material'
+import { Grid } from '@mui/material'
 import experiences from './experience'
 
 export default function ExperiencePanel() {

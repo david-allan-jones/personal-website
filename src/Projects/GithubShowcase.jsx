@@ -5,6 +5,7 @@ import { Grid, Paper, Typography, Link } from '@mui/material'
 
 const WHITELIST = [
     'contactserver',
+    'sizzle.io',
     'boosted-reformat',
     'rakuten-price-checker',
 ]

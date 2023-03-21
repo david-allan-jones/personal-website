@@ -5,6 +5,10 @@ import llcJapanese from './img/llc-japanese-films.png'
 import llcArabic from './img/llc-arabic-home.png'
 import llcPlacement from './img/llc-placement-test.png'
 import llcAbout from './img/llc-about.jpg'
+import sizzleHome from './img/sizzle-home.png'
+import sizzlePoll from './img/sizzle-poll.png'
+import sizzleAnswer from './img/sizzle-answer.png'
+import sizzleResults from './img/sizzle-results.png'
 import scmlaSessions from './img/scmla-conference-sessions.png'
 import scmlaDetails from './img/scmla-event-details.png'
 import scmlaPanels from './img/scmla-panels.png'
@@ -22,6 +26,18 @@ const projects = [
                 { src: llcArabic, alt: i18next.t('projects.llc.arabic') },
                 { src: llcPlacement, alt: i18next.t('projects.llc.placement') },
                 { src: llcAbout, alt: i18next.t('projects.llc.about') }
+            ]
+        }
+    },
+    {
+        url: 'https://sizzle-io.vercel.app/polls',
+        linkText: i18next.t('projects.sizzle.header'),
+        carousel: {
+            items: [
+                { src: sizzleHome, alt: i18next.t('projects.sizzle.home') },
+                { src: sizzlePoll, alt: i18next.t('projects.sizzle.poll') },
+                { src: sizzleAnswer, alt: i18next.t('projects.sizzle.answer') },
+                { src: sizzleResults, alt: i18next.t('projects.sizzle.results') },
             ]
         }
     },
