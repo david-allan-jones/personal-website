@@ -62,8 +62,6 @@ function App() {
     window.location.reload()
   }
 
-  console.log(darkModeEnabled ? darkTheme : lightTheme)
-
   return (
     <ThemeProvider theme={darkModeEnabled ? darkTheme : lightTheme}>
       <CssBaseline />
