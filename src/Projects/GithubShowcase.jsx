@@ -4,8 +4,9 @@ import SectionHeader from '../shared/SectionHeader'
 import { Grid, Paper, Typography, Link } from '@mui/material'
 
 const WHITELIST = [
-    'contactserver',
     'sizzle.io',
+    'funcbench',
+    'contactserver',
     'boosted-reformat',
     'rakuten-price-checker',
 ]
