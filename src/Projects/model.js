@@ -9,6 +9,8 @@ import sizzleHome from './img/sizzle-home.png'
 import sizzlePoll from './img/sizzle-poll.png'
 import sizzleAnswer from './img/sizzle-answer.png'
 import sizzleResults from './img/sizzle-results.png'
+import gomiRepl from './img/gomi-repl.png'
+import gomiSrc from './img/gomi-src.png'
 import scmlaSessions from './img/scmla-conference-sessions.png'
 import scmlaDetails from './img/scmla-event-details.png'
 import scmlaPanels from './img/scmla-panels.png'
@@ -38,6 +40,16 @@ const projects = [
                 { src: sizzlePoll, alt: i18next.t('projects.sizzle.poll') },
                 { src: sizzleAnswer, alt: i18next.t('projects.sizzle.answer') },
                 { src: sizzleResults, alt: i18next.t('projects.sizzle.results') },
+            ]
+        }
+    },
+    {
+        url: 'https://github.com/david-allan-jones/gomi-lang',
+        linkText: i18next.t('projects.gomi.header'),
+        carousel: {
+            items: [
+                { src: gomiRepl, alt: i18next.t('projects.gomi.repl') },
+                { src: gomiSrc, alt: i18next.t('projects.gomi.src') },
             ]
         }
     },
