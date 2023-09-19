@@ -5,6 +5,7 @@ import { Grid, Paper, Typography, Link } from '@mui/material'
 
 const WHITELIST = [
     'sizzle.io',
+    'gomi-lang',
     'funcbench',
     'contactserver',
     'boosted-reformat',
