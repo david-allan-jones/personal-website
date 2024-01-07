@@ -5,6 +5,7 @@
   "engines": {
 	  "node": "16.20.2"
   },
+  "homepage": "https://david-allan-jones.github.io/personal-website",
   "dependencies": {
     "@mui/icons-material": "5.8.4",
     "@mui/material": "5.8.5",
