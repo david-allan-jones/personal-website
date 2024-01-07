@@ -56,6 +56,7 @@ export default function Contact() {
                 <Typography variant='p' style={{ marginBottom: '20px' }}>{i18next.t('contact.info')}</Typography>
                 <TextField
                     id='name'
+                    name='name'
                     onChange={handleNameChange}
                     label={i18next.t('contact.name')}
                     variant='outlined'
@@ -64,6 +65,7 @@ export default function Contact() {
                 />
                 <TextField
                     id='email'
+                    name='email'
                     onChange={handleEmailChange}
                     label={i18next.t('contact.email')}
                     variant='outlined'
@@ -72,6 +74,7 @@ export default function Contact() {
                 />
                 <TextField
                     id='message'
+                    name='message'
                     onChange={handleMessageChange}
                     label={i18next.t('contact.message')}
                     variant='outlined'
