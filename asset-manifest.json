@@ -1,0 +1,43 @@
+{
+  "files": {
+    "main.css": "/static/css/main.701ceb85.chunk.css",
+    "main.js": "/static/js/main.af22bf27.chunk.js",
+    "main.js.map": "/static/js/main.af22bf27.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.9ad130bd.js",
+    "runtime-main.js.map": "/static/js/runtime-main.9ad130bd.js.map",
+    "static/js/2.0d7225b5.chunk.js": "/static/js/2.0d7225b5.chunk.js",
+    "static/js/2.0d7225b5.chunk.js.map": "/static/js/2.0d7225b5.chunk.js.map",
+    "index.html": "/index.html",
+    "static/css/main.701ceb85.chunk.css.map": "/static/css/main.701ceb85.chunk.css.map",
+    "static/js/2.0d7225b5.chunk.js.LICENSE.txt": "/static/js/2.0d7225b5.chunk.js.LICENSE.txt",
+    "static/media/avatar.acd9767e.jpg": "/static/media/avatar.acd9767e.jpg",
+    "static/media/gomi-repl.a6d6a643.png": "/static/media/gomi-repl.a6d6a643.png",
+    "static/media/gomi-src.8e679467.png": "/static/media/gomi-src.8e679467.png",
+    "static/media/japan.101def03.jpg": "/static/media/japan.101def03.jpg",
+    "static/media/llc-about.83372162.jpg": "/static/media/llc-about.83372162.jpg",
+    "static/media/llc-arabic-home.02ff646b.png": "/static/media/llc-arabic-home.02ff646b.png",
+    "static/media/llc-homepage.6f215075.png": "/static/media/llc-homepage.6f215075.png",
+    "static/media/llc-japanese-films.edc4f865.png": "/static/media/llc-japanese-films.edc4f865.png",
+    "static/media/llc-languages-home.a98b2d13.png": "/static/media/llc-languages-home.a98b2d13.png",
+    "static/media/llc-placement-test.e6fe54ff.png": "/static/media/llc-placement-test.e6fe54ff.png",
+    "static/media/okc-skyline.d2a0fe41.jpg": "/static/media/okc-skyline.d2a0fe41.jpg",
+    "static/media/ou-library.4b9e38ad.jpg": "/static/media/ou-library.4b9e38ad.jpg",
+    "static/media/scmla-conference-sessions.3f774c37.png": "/static/media/scmla-conference-sessions.3f774c37.png",
+    "static/media/scmla-event-details.6be82a8e.png": "/static/media/scmla-event-details.6be82a8e.png",
+    "static/media/scmla-panels.961dca81.png": "/static/media/scmla-panels.961dca81.png",
+    "static/media/scmla-thanks.280409e8.png": "/static/media/scmla-thanks.280409e8.png",
+    "static/media/scmla.2fbc304a.jpg": "/static/media/scmla.2fbc304a.jpg",
+    "static/media/sizzle-answer.4d2ecc6f.png": "/static/media/sizzle-answer.4d2ecc6f.png",
+    "static/media/sizzle-home.d73e4673.png": "/static/media/sizzle-home.d73e4673.png",
+    "static/media/sizzle-poll.be0033af.png": "/static/media/sizzle-poll.be0033af.png",
+    "static/media/sizzle-results.d65c7b84.png": "/static/media/sizzle-results.d65c7b84.png",
+    "static/media/tulsa-skyline.69af635c.jpg": "/static/media/tulsa-skyline.69af635c.jpg",
+    "static/media/uec-koudou.13604de5.jpg": "/static/media/uec-koudou.13604de5.jpg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.9ad130bd.js",
+    "static/js/2.0d7225b5.chunk.js",
+    "static/css/main.701ceb85.chunk.css",
+    "static/js/main.af22bf27.chunk.js"
+  ]
+}
