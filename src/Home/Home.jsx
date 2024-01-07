@@ -1,6 +1,6 @@
 import React from "react"
 import SectionWrapper from "./SectionWrapper"
-import sections from "./sections"
+import sections from "./sections.jsx"
 
 export default function Home() {
     return (

@@ -8,7 +8,7 @@ import {
 } from '@mui/icons-material'
 import { lightTheme, darkTheme } from './themes'
 import { BrowserRouter as Router, Route, Switch, Link } from 'react-router-dom'
-import navigations from './navigations'
+import navigations from './navigations.jsx'
 import {
   ThemeProvider,
   Switch as MuiSwitch,
