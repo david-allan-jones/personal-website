@@ -95,7 +95,7 @@ export default function Contact() {
             <ResultModal
                 visible={openSuccessModal}
                 message={i18next.t('contact.success')}
-                onClose={() => window.location.reload()}
+                onClose={() => window.location.href = 'https://david-allan-jones.github.io/personal-website/'}
             />
             <ResultModal
                 visible={openErrorModal}
